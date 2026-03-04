@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competence Mapping Workbook | Holistic Consulting</title>
+  <meta name="description" content="Map your skills across 28 competencies, identify gaps, claim strengths, and build a growth plan. Your final Phase 1 deliverable in the LAUNCH Program." />
+  <link rel="canonical" href="https://business.holisticconsultinghq.com/resources/competence-mapping-workbook.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="resource-base.css" />
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-YPMjOMyU8ChKAw77uwdj2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+  <style>
+    /* ── Rating Grid (page-specific) ── */
+    .rating-scale-legend {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      background: var(--stone);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .rating-scale-legend .scale-item {
+      text-align: center;
+    }
+    .rating-scale-legend .scale-number {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .rating-scale-legend .scale-desc {
+      font-size: 0.65rem;
+      color: var(--slate);
+      line-height: 1.35;
+    }
+
+    .skill-grid {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .skill-grid thead th {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding: 0.5rem 0.35rem;
+      text-align: center;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .skill-grid thead th:first-child {
+      text-align: left;
+      width: 55%;
+    }
+    .skill-grid tbody tr {
+      border-bottom: 1px solid rgba(216,213,206,0.5);
+      transition: background 0.15s;
+    }
+    .skill-grid tbody tr:last-child {
+      border-bottom: none;
+    }
+    .skill-grid tbody tr:hover {
+      background: rgba(224,230,238,0.2);
+    }
+    .skill-grid td {
+      padding: 0.55rem 0.35rem;
+      vertical-align: middle;
+    }
+    .skill-grid td:first-child {
+      font-size: 0.85rem;
+      color: var(--charcoal);
+      padding-left: 0;
+    }
+    .skill-grid td:not(:first-child) {
+      text-align: center;
+    }
+    .skill-grid input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--border);
+      border-radius: 50%;
+      background: var(--white);
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .skill-grid input[type="radio"]:hover {
+      border-color: var(--teal-lt);
+    }
+    .skill-grid input[type="radio"]:checked {
+      border-color: var(--teal);
+      background: var(--teal);
+    }
+    .skill-grid input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      background: var(--white);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .skill-grid input[type="radio"]:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 2px;
+    }
+
+    .category-avg {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--teal);
+      background: var(--teal-tint);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-left: auto;
+    }
+    .category-avg-value {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ws-section-header-with-avg {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .ws-section-header-with-avg .ws-section-header-text {
+      flex: 1;
+    }
+    .ws-section-header-with-avg .category-avg {
+      flex-shrink: 0;
+      margin-top: 0.35rem;
+    }
+
+    /* Gap analysis row */
+    .gap-row {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 0.75rem;
+      align-items: end;
+      margin-bottom: 0.75rem;
+    }
+    .gap-row .field-group {
+      margin-bottom: 0;
+    }
+    .field-select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field-select:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(44,74,110,0.08);
+    }
+
+    /* Strengths row */
+    .strength-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      align-items: end;
+      margin-bottom: 0.75rem;
+    }
+    .strength-row .field-group {
+      margin-bottom: 0;
+    }
+
+    /* Growth plan mini-card */
+    .growth-card {
+      background: var(--stone);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .growth-card-number {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--bronze);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .growth-card .field-group:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Category definition callout */
+    .category-defs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .category-def {
+      background: var(--stone);
+      border-radius: 4px;
+      padding: 0.75rem 0.9rem;
+    }
+    .category-def-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .category-def-label.need-now { color: var(--danger); }
+    .category-def-label.develop-later { color: var(--bronze); }
+    .category-def-label.not-relevant { color: var(--slate); }
+    .category-def p {
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+
+    /* Competence statement section */
+    .competence-statement-section {
+      border: 2px solid var(--teal-tint);
+    }
+
+    /* Formula reference */
+    .formula-ref {
+      background: var(--stone);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.55;
+    }
+    .formula-ref em {
+      color: var(--teal);
+      font-style: normal;
+      background: var(--teal-tint);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+
+    /* Print overrides for rating grid */
+    @media print {
+      .rating-scale-legend {
+        background: #f9f9f9;
+        border-color: #ddd;
+      }
+      .skill-grid input[type="radio"] {
+        width: 10pt;
+        height: 10pt;
+        border: 1.5px solid #999;
+      }
+      .skill-grid input[type="radio"]:checked {
+        background: #333;
+        border-color: #333;
+      }
+      .category-avg {
+        background: #f0f3f7;
+        color: #333;
+      }
+      .growth-card {
+        background: #f9f9f9;
+        border-color: #ddd;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .category-defs {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .category-def {
+        background: #f9f9f9;
+      }
+      .formula-ref {
+        background: #f9f9f9;
+        border-color: #ddd;
+      }
+      .field-select {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        padding: 0.3rem 0;
+        background: transparent;
+      }
+      .gap-row {
+        grid-template-columns: 1fr 160px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rating-scale-legend {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+      .rating-scale-legend .scale-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: left;
+      }
+      .rating-scale-legend .scale-number {
+        font-size: 1rem;
+        min-width: 20px;
+        margin-bottom: 0;
+      }
+      .skill-grid thead th {
+        font-size: 0.5rem;
+        padding: 0.4rem 0.2rem;
+      }
+      .skill-grid td {
+        padding: 0.45rem 0.2rem;
+      }
+      .skill-grid td:first-child {
+        font-size: 0.78rem;
+      }
+      .skill-grid input[type="radio"] {
+        width: 16px;
+        height: 16px;
+      }
+      .gap-row {
+        grid-template-columns: 1fr;
+      }
+      .strength-row {
+        grid-template-columns: 1fr;
+      }
+      .category-defs {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="resource-header" id="resHeader">
+    <div class="resource-header-inner">
+      <a href="../index.html" class="resource-header-brand">
+        <span class="logo-text">Holistic Consulting</span>
+        <span class="logo-sub">Business Resources</span>
+      </a>
+      <nav class="resource-header-nav">
+        <a href="../resources.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+          All Resources
+        </a>
+        <button class="btn-clear" id="clearBtn" type="button">Clear Form</button>
+        <button class="btn-print" id="printBtn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 12h.008v.008h-.008V12zm-2.25 0h.008v.008H16.5V12z" /></svg>
+          Print / Save PDF
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══ PAGE CONTENT ═══ -->
+  <main class="resource-page" id="resourcePage">
+
+    <!-- Title Block -->
+    <div class="resource-title-block">
+      <div class="resource-eyebrow">LAUNCH Program &middot; Phase 1 &middot; Final Deliverable</div>
+      <h1>Competence Mapping <em>Workbook</em></h1>
+      <p class="resource-subtitle">Map your skills across 28 competencies, identify your gaps, claim your strengths, and build a growth plan. This is your final Phase 1 deliverable.</p>
+      <div class="resource-meta">
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          35 minutes
+        </span>
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+          4 steps
+        </span>
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          28 skills rated
+        </span>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-bar-wrap">
+        <div class="progress-label">
+          <span>Worksheet Progress</span>
+          <span id="progressText">0 of 4 steps</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sean Quote -->
+    <div class="callout callout-sean">
+      <div class="callout-attribution">From Sean</div>
+      <blockquote>&ldquo;Your competence map is the bridge between imposter syndrome and confidence. It turns vague anxiety into specific data.&rdquo;</blockquote>
+    </div>
+
+
+    <!-- ═══ STEP 1: Skills Inventory ═══ -->
+
+    <!-- Scale Legend -->
+    <div class="rating-scale-legend no-print" style="margin-top: 1.5rem;">
+      <div class="scale-item">
+        <span class="scale-number">1</span>
+        <span class="scale-desc">No training or experience</span>
+      </div>
+      <div class="scale-item">
+        <span class="scale-number">2</span>
+        <span class="scale-desc">Some awareness, no practice</span>
+      </div>
+      <div class="scale-item">
+        <span class="scale-number">3</span>
+        <span class="scale-desc">Trained but limited practice</span>
+      </div>
+      <div class="scale-item">
+        <span class="scale-number">4</span>
+        <span class="scale-desc">Comfortable and practiced</span>
+      </div>
+      <div class="scale-item">
+        <span class="scale-number">5</span>
+        <span class="scale-desc">Could confidently apply with a client tomorrow</span>
+      </div>
+    </div>
+
+
+    <!-- 1a: Clinical Skills -->
+    <div class="ws-section" data-section="1" data-category="clinical">
+      <div class="ws-section-header-with-avg">
+        <span class="ws-section-number">1a</span>
+        <div class="ws-section-header-text">
+          <h2>Clinical Skills</h2>
+          <p>Rate your current confidence in each clinical skill on a 1&ndash;5 scale. Be honest &mdash; this is a map, not a test.</p>
+        </div>
+        <div class="category-avg" id="avg-clinical">Avg: <span class="category-avg-value" id="avg-clinical-val">&mdash;</span></div>
+      </div>
+
+      <table class="skill-grid">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nutritional assessment &amp; intake</td>
+            <td><input type="radio" name="clinical-1" value="1" data-radio="clinical-1" /></td>
+            <td><input type="radio" name="clinical-1" value="2" data-radio="clinical-1" /></td>
+            <td><input type="radio" name="clinical-1" value="3" data-radio="clinical-1" /></td>
+            <td><input type="radio" name="clinical-1" value="4" data-radio="clinical-1" /></td>
+            <td><input type="radio" name="clinical-1" value="5" data-radio="clinical-1" /></td>
+          </tr>
+          <tr>
+            <td>Personalized meal planning</td>
+            <td><input type="radio" name="clinical-2" value="1" data-radio="clinical-2" /></td>
+            <td><input type="radio" name="clinical-2" value="2" data-radio="clinical-2" /></td>
+            <td><input type="radio" name="clinical-2" value="3" data-radio="clinical-2" /></td>
+            <td><input type="radio" name="clinical-2" value="4" data-radio="clinical-2" /></td>
+            <td><input type="radio" name="clinical-2" value="5" data-radio="clinical-2" /></td>
+          </tr>
+          <tr>
+            <td>Supplement recommendations</td>
+            <td><input type="radio" name="clinical-3" value="1" data-radio="clinical-3" /></td>
+            <td><input type="radio" name="clinical-3" value="2" data-radio="clinical-3" /></td>
+            <td><input type="radio" name="clinical-3" value="3" data-radio="clinical-3" /></td>
+            <td><input type="radio" name="clinical-3" value="4" data-radio="clinical-3" /></td>
+            <td><input type="radio" name="clinical-3" value="5" data-radio="clinical-3" /></td>
+          </tr>
+          <tr>
+            <td>Elimination protocol design &amp; guidance</td>
+            <td><input type="radio" name="clinical-4" value="1" data-radio="clinical-4" /></td>
+            <td><input type="radio" name="clinical-4" value="2" data-radio="clinical-4" /></td>
+            <td><input type="radio" name="clinical-4" value="3" data-radio="clinical-4" /></td>
+            <td><input type="radio" name="clinical-4" value="4" data-radio="clinical-4" /></td>
+            <td><input type="radio" name="clinical-4" value="5" data-radio="clinical-4" /></td>
+          </tr>
+          <tr>
+            <td>Blood sugar regulation strategies</td>
+            <td><input type="radio" name="clinical-5" value="1" data-radio="clinical-5" /></td>
+            <td><input type="radio" name="clinical-5" value="2" data-radio="clinical-5" /></td>
+            <td><input type="radio" name="clinical-5" value="3" data-radio="clinical-5" /></td>
+            <td><input type="radio" name="clinical-5" value="4" data-radio="clinical-5" /></td>
+            <td><input type="radio" name="clinical-5" value="5" data-radio="clinical-5" /></td>
+          </tr>
+          <tr>
+            <td>Digestive health assessment</td>
+            <td><input type="radio" name="clinical-6" value="1" data-radio="clinical-6" /></td>
+            <td><input type="radio" name="clinical-6" value="2" data-radio="clinical-6" /></td>
+            <td><input type="radio" name="clinical-6" value="3" data-radio="clinical-6" /></td>
+            <td><input type="radio" name="clinical-6" value="4" data-radio="clinical-6" /></td>
+            <td><input type="radio" name="clinical-6" value="5" data-radio="clinical-6" /></td>
+          </tr>
+          <tr>
+            <td>Understanding lab work (within scope)</td>
+            <td><input type="radio" name="clinical-7" value="1" data-radio="clinical-7" /></td>
+            <td><input type="radio" name="clinical-7" value="2" data-radio="clinical-7" /></td>
+            <td><input type="radio" name="clinical-7" value="3" data-radio="clinical-7" /></td>
+            <td><input type="radio" name="clinical-7" value="4" data-radio="clinical-7" /></td>
+            <td><input type="radio" name="clinical-7" value="5" data-radio="clinical-7" /></td>
+          </tr>
+          <tr>
+            <td>Food-as-medicine protocol development</td>
+            <td><input type="radio" name="clinical-8" value="1" data-radio="clinical-8" /></td>
+            <td><input type="radio" name="clinical-8" value="2" data-radio="clinical-8" /></td>
+            <td><input type="radio" name="clinical-8" value="3" data-radio="clinical-8" /></td>
+            <td><input type="radio" name="clinical-8" value="4" data-radio="clinical-8" /></td>
+            <td><input type="radio" name="clinical-8" value="5" data-radio="clinical-8" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- 1b: Coaching Skills -->
+    <div class="ws-section" data-section="1" data-category="coaching">
+      <div class="ws-section-header-with-avg">
+        <span class="ws-section-number">1b</span>
+        <div class="ws-section-header-text">
+          <h2>Coaching Skills</h2>
+          <p>These are the relational skills that determine whether clients stick with you &mdash; or quietly disappear after session two.</p>
+        </div>
+        <div class="category-avg" id="avg-coaching">Avg: <span class="category-avg-value" id="avg-coaching-val">&mdash;</span></div>
+      </div>
+
+      <table class="skill-grid">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Active listening</td>
+            <td><input type="radio" name="coaching-1" value="1" data-radio="coaching-1" /></td>
+            <td><input type="radio" name="coaching-1" value="2" data-radio="coaching-1" /></td>
+            <td><input type="radio" name="coaching-1" value="3" data-radio="coaching-1" /></td>
+            <td><input type="radio" name="coaching-1" value="4" data-radio="coaching-1" /></td>
+            <td><input type="radio" name="coaching-1" value="5" data-radio="coaching-1" /></td>
+          </tr>
+          <tr>
+            <td>Motivational interviewing</td>
+            <td><input type="radio" name="coaching-2" value="1" data-radio="coaching-2" /></td>
+            <td><input type="radio" name="coaching-2" value="2" data-radio="coaching-2" /></td>
+            <td><input type="radio" name="coaching-2" value="3" data-radio="coaching-2" /></td>
+            <td><input type="radio" name="coaching-2" value="4" data-radio="coaching-2" /></td>
+            <td><input type="radio" name="coaching-2" value="5" data-radio="coaching-2" /></td>
+          </tr>
+          <tr>
+            <td>Behavior change facilitation</td>
+            <td><input type="radio" name="coaching-3" value="1" data-radio="coaching-3" /></td>
+            <td><input type="radio" name="coaching-3" value="2" data-radio="coaching-3" /></td>
+            <td><input type="radio" name="coaching-3" value="3" data-radio="coaching-3" /></td>
+            <td><input type="radio" name="coaching-3" value="4" data-radio="coaching-3" /></td>
+            <td><input type="radio" name="coaching-3" value="5" data-radio="coaching-3" /></td>
+          </tr>
+          <tr>
+            <td>Setting and tracking client goals</td>
+            <td><input type="radio" name="coaching-4" value="1" data-radio="coaching-4" /></td>
+            <td><input type="radio" name="coaching-4" value="2" data-radio="coaching-4" /></td>
+            <td><input type="radio" name="coaching-4" value="3" data-radio="coaching-4" /></td>
+            <td><input type="radio" name="coaching-4" value="4" data-radio="coaching-4" /></td>
+            <td><input type="radio" name="coaching-4" value="5" data-radio="coaching-4" /></td>
+          </tr>
+          <tr>
+            <td>Empathy and rapport building</td>
+            <td><input type="radio" name="coaching-5" value="1" data-radio="coaching-5" /></td>
+            <td><input type="radio" name="coaching-5" value="2" data-radio="coaching-5" /></td>
+            <td><input type="radio" name="coaching-5" value="3" data-radio="coaching-5" /></td>
+            <td><input type="radio" name="coaching-5" value="4" data-radio="coaching-5" /></td>
+            <td><input type="radio" name="coaching-5" value="5" data-radio="coaching-5" /></td>
+          </tr>
+          <tr>
+            <td>Managing difficult conversations</td>
+            <td><input type="radio" name="coaching-6" value="1" data-radio="coaching-6" /></td>
+            <td><input type="radio" name="coaching-6" value="2" data-radio="coaching-6" /></td>
+            <td><input type="radio" name="coaching-6" value="3" data-radio="coaching-6" /></td>
+            <td><input type="radio" name="coaching-6" value="4" data-radio="coaching-6" /></td>
+            <td><input type="radio" name="coaching-6" value="5" data-radio="coaching-6" /></td>
+          </tr>
+          <tr>
+            <td>Client accountability &amp; follow-through</td>
+            <td><input type="radio" name="coaching-7" value="1" data-radio="coaching-7" /></td>
+            <td><input type="radio" name="coaching-7" value="2" data-radio="coaching-7" /></td>
+            <td><input type="radio" name="coaching-7" value="3" data-radio="coaching-7" /></td>
+            <td><input type="radio" name="coaching-7" value="4" data-radio="coaching-7" /></td>
+            <td><input type="radio" name="coaching-7" value="5" data-radio="coaching-7" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- 1c: Business Skills -->
+    <div class="ws-section" data-section="1" data-category="business">
+      <div class="ws-section-header-with-avg">
+        <span class="ws-section-number">1c</span>
+        <div class="ws-section-header-text">
+          <h2>Business Skills</h2>
+          <p>Your clinical skills get clients results. These skills get you clients in the first place &mdash; and keep your practice running.</p>
+        </div>
+        <div class="category-avg" id="avg-business">Avg: <span class="category-avg-value" id="avg-business-val">&mdash;</span></div>
+      </div>
+
+      <table class="skill-grid">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Written communication (emails, content)</td>
+            <td><input type="radio" name="business-1" value="1" data-radio="business-1" /></td>
+            <td><input type="radio" name="business-1" value="2" data-radio="business-1" /></td>
+            <td><input type="radio" name="business-1" value="3" data-radio="business-1" /></td>
+            <td><input type="radio" name="business-1" value="4" data-radio="business-1" /></td>
+            <td><input type="radio" name="business-1" value="5" data-radio="business-1" /></td>
+          </tr>
+          <tr>
+            <td>Organization &amp; time management</td>
+            <td><input type="radio" name="business-2" value="1" data-radio="business-2" /></td>
+            <td><input type="radio" name="business-2" value="2" data-radio="business-2" /></td>
+            <td><input type="radio" name="business-2" value="3" data-radio="business-2" /></td>
+            <td><input type="radio" name="business-2" value="4" data-radio="business-2" /></td>
+            <td><input type="radio" name="business-2" value="5" data-radio="business-2" /></td>
+          </tr>
+          <tr>
+            <td>Technology (scheduling, CRM, video calls)</td>
+            <td><input type="radio" name="business-3" value="1" data-radio="business-3" /></td>
+            <td><input type="radio" name="business-3" value="2" data-radio="business-3" /></td>
+            <td><input type="radio" name="business-3" value="3" data-radio="business-3" /></td>
+            <td><input type="radio" name="business-3" value="4" data-radio="business-3" /></td>
+            <td><input type="radio" name="business-3" value="5" data-radio="business-3" /></td>
+          </tr>
+          <tr>
+            <td>Social media &amp; content creation</td>
+            <td><input type="radio" name="business-4" value="1" data-radio="business-4" /></td>
+            <td><input type="radio" name="business-4" value="2" data-radio="business-4" /></td>
+            <td><input type="radio" name="business-4" value="3" data-radio="business-4" /></td>
+            <td><input type="radio" name="business-4" value="4" data-radio="business-4" /></td>
+            <td><input type="radio" name="business-4" value="5" data-radio="business-4" /></td>
+          </tr>
+          <tr>
+            <td>Networking &amp; relationship building</td>
+            <td><input type="radio" name="business-5" value="1" data-radio="business-5" /></td>
+            <td><input type="radio" name="business-5" value="2" data-radio="business-5" /></td>
+            <td><input type="radio" name="business-5" value="3" data-radio="business-5" /></td>
+            <td><input type="radio" name="business-5" value="4" data-radio="business-5" /></td>
+            <td><input type="radio" name="business-5" value="5" data-radio="business-5" /></td>
+          </tr>
+          <tr>
+            <td>Basic financial management</td>
+            <td><input type="radio" name="business-6" value="1" data-radio="business-6" /></td>
+            <td><input type="radio" name="business-6" value="2" data-radio="business-6" /></td>
+            <td><input type="radio" name="business-6" value="3" data-radio="business-6" /></td>
+            <td><input type="radio" name="business-6" value="4" data-radio="business-6" /></td>
+            <td><input type="radio" name="business-6" value="5" data-radio="business-6" /></td>
+          </tr>
+          <tr>
+            <td>Marketing &amp; client acquisition</td>
+            <td><input type="radio" name="business-7" value="1" data-radio="business-7" /></td>
+            <td><input type="radio" name="business-7" value="2" data-radio="business-7" /></td>
+            <td><input type="radio" name="business-7" value="3" data-radio="business-7" /></td>
+            <td><input type="radio" name="business-7" value="4" data-radio="business-7" /></td>
+            <td><input type="radio" name="business-7" value="5" data-radio="business-7" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- 1d: Personal Qualities -->
+    <div class="ws-section" data-section="1" data-category="personal">
+      <div class="ws-section-header-with-avg">
+        <span class="ws-section-number">1d</span>
+        <div class="ws-section-header-text">
+          <h2>Personal Qualities</h2>
+          <p>These aren&rsquo;t soft skills &mdash; they&rsquo;re the foundation everything else is built on. Rate yourself honestly.</p>
+        </div>
+        <div class="category-avg" id="avg-personal">Avg: <span class="category-avg-value" id="avg-personal-val">&mdash;</span></div>
+      </div>
+
+      <table class="skill-grid">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empathy &amp; compassion</td>
+            <td><input type="radio" name="personal-1" value="1" data-radio="personal-1" /></td>
+            <td><input type="radio" name="personal-1" value="2" data-radio="personal-1" /></td>
+            <td><input type="radio" name="personal-1" value="3" data-radio="personal-1" /></td>
+            <td><input type="radio" name="personal-1" value="4" data-radio="personal-1" /></td>
+            <td><input type="radio" name="personal-1" value="5" data-radio="personal-1" /></td>
+          </tr>
+          <tr>
+            <td>Persistence &amp; resilience</td>
+            <td><input type="radio" name="personal-2" value="1" data-radio="personal-2" /></td>
+            <td><input type="radio" name="personal-2" value="2" data-radio="personal-2" /></td>
+            <td><input type="radio" name="personal-2" value="3" data-radio="personal-2" /></td>
+            <td><input type="radio" name="personal-2" value="4" data-radio="personal-2" /></td>
+            <td><input type="radio" name="personal-2" value="5" data-radio="personal-2" /></td>
+          </tr>
+          <tr>
+            <td>Intellectual curiosity</td>
+            <td><input type="radio" name="personal-3" value="1" data-radio="personal-3" /></td>
+            <td><input type="radio" name="personal-3" value="2" data-radio="personal-3" /></td>
+            <td><input type="radio" name="personal-3" value="3" data-radio="personal-3" /></td>
+            <td><input type="radio" name="personal-3" value="4" data-radio="personal-3" /></td>
+            <td><input type="radio" name="personal-3" value="5" data-radio="personal-3" /></td>
+          </tr>
+          <tr>
+            <td>Adaptability &amp; flexibility</td>
+            <td><input type="radio" name="personal-4" value="1" data-radio="personal-4" /></td>
+            <td><input type="radio" name="personal-4" value="2" data-radio="personal-4" /></td>
+            <td><input type="radio" name="personal-4" value="3" data-radio="personal-4" /></td>
+            <td><input type="radio" name="personal-4" value="4" data-radio="personal-4" /></td>
+            <td><input type="radio" name="personal-4" value="5" data-radio="personal-4" /></td>
+          </tr>
+          <tr>
+            <td>Self-discipline &amp; follow-through</td>
+            <td><input type="radio" name="personal-5" value="1" data-radio="personal-5" /></td>
+            <td><input type="radio" name="personal-5" value="2" data-radio="personal-5" /></td>
+            <td><input type="radio" name="personal-5" value="3" data-radio="personal-5" /></td>
+            <td><input type="radio" name="personal-5" value="4" data-radio="personal-5" /></td>
+            <td><input type="radio" name="personal-5" value="5" data-radio="personal-5" /></td>
+          </tr>
+          <tr>
+            <td>Genuine desire to help others</td>
+            <td><input type="radio" name="personal-6" value="1" data-radio="personal-6" /></td>
+            <td><input type="radio" name="personal-6" value="2" data-radio="personal-6" /></td>
+            <td><input type="radio" name="personal-6" value="3" data-radio="personal-6" /></td>
+            <td><input type="radio" name="personal-6" value="4" data-radio="personal-6" /></td>
+            <td><input type="radio" name="personal-6" value="5" data-radio="personal-6" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- ═══ STEP 2: Gap Analysis ═══ -->
+    <div class="ws-section" data-section="2">
+      <div class="ws-section-header">
+        <span class="ws-section-number">2</span>
+        <div class="ws-section-header-text">
+          <h2>Gap Analysis</h2>
+          <p>List any skills you rated 1 or 2. For each, decide: do you need this NOW, can you develop it LATER, or is it NOT RELEVANT to your niche?</p>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="field-group">
+          <label class="field-label">Skill</label>
+          <input type="text" class="field-input" data-field="gap-skill-1" placeholder="e.g., Marketing &amp; client acquisition" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Priority</label>
+          <select class="field-select" data-field="gap-priority-1">
+            <option value="">Select...</option>
+            <option value="need-now">Need Now</option>
+            <option value="develop-later">Develop Later</option>
+            <option value="not-relevant">Not Relevant to My Niche</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="gap-skill-2" placeholder="e.g., Understanding lab work" />
+        </div>
+        <div class="field-group">
+          <select class="field-select" data-field="gap-priority-2">
+            <option value="">Select...</option>
+            <option value="need-now">Need Now</option>
+            <option value="develop-later">Develop Later</option>
+            <option value="not-relevant">Not Relevant to My Niche</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="gap-skill-3" placeholder="e.g., Motivational interviewing" />
+        </div>
+        <div class="field-group">
+          <select class="field-select" data-field="gap-priority-3">
+            <option value="">Select...</option>
+            <option value="need-now">Need Now</option>
+            <option value="develop-later">Develop Later</option>
+            <option value="not-relevant">Not Relevant to My Niche</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="gap-skill-4" placeholder="e.g., Basic financial management" />
+        </div>
+        <div class="field-group">
+          <select class="field-select" data-field="gap-priority-4">
+            <option value="">Select...</option>
+            <option value="need-now">Need Now</option>
+            <option value="develop-later">Develop Later</option>
+            <option value="not-relevant">Not Relevant to My Niche</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="gap-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="gap-skill-5" placeholder="e.g., Social media &amp; content creation" />
+        </div>
+        <div class="field-group">
+          <select class="field-select" data-field="gap-priority-5">
+            <option value="">Select...</option>
+            <option value="need-now">Need Now</option>
+            <option value="develop-later">Develop Later</option>
+            <option value="not-relevant">Not Relevant to My Niche</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="category-defs">
+        <div class="category-def">
+          <div class="category-def-label need-now">Need Now</div>
+          <p>Essential before you see your first client</p>
+        </div>
+        <div class="category-def">
+          <div class="category-def-label develop-later">Develop Later</div>
+          <p>Valuable but not critical for your initial practice</p>
+        </div>
+        <div class="category-def">
+          <div class="category-def-label not-relevant">Not Relevant</div>
+          <p>Doesn&rsquo;t apply to your niche direction</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ STEP 3: Strengths Map ═══ -->
+    <div class="ws-section" data-section="3">
+      <div class="ws-section-header">
+        <span class="ws-section-number">3</span>
+        <div class="ws-section-header-text">
+          <h2>Strengths Map</h2>
+          <p>List skills you rated 4 or 5 and map each to a specific client outcome.</p>
+        </div>
+      </div>
+
+      <div class="formula-ref">
+        Because I&rsquo;m strong in <em>[skill]</em>, I can help clients with <em>[specific outcome]</em>.
+      </div>
+
+      <div class="strength-row">
+        <div class="field-group">
+          <label class="field-label">Skill</label>
+          <input type="text" class="field-input" data-field="strength-skill-1" placeholder="e.g., Active listening" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Client Outcome</label>
+          <input type="text" class="field-input" data-field="strength-outcome-1" placeholder="e.g., Clients feel truly heard and stay committed" />
+        </div>
+      </div>
+
+      <div class="strength-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-skill-2" placeholder="e.g., Personalized meal planning" />
+        </div>
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-outcome-2" placeholder="e.g., Clients get practical plans they actually follow" />
+        </div>
+      </div>
+
+      <div class="strength-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-skill-3" placeholder="e.g., Empathy &amp; compassion" />
+        </div>
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-outcome-3" placeholder="e.g., Clients feel safe sharing struggles" />
+        </div>
+      </div>
+
+      <div class="strength-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-skill-4" placeholder="e.g., Digestive health assessment" />
+        </div>
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-outcome-4" placeholder="e.g., Clients identify root causes of discomfort" />
+        </div>
+      </div>
+
+      <div class="strength-row">
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-skill-5" placeholder="e.g., Behavior change facilitation" />
+        </div>
+        <div class="field-group">
+          <input type="text" class="field-input" data-field="strength-outcome-5" placeholder="e.g., Clients build lasting habits, not quick fixes" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ STEP 4: Growth Plan ═══ -->
+    <div class="ws-section" data-section="4">
+      <div class="ws-section-header">
+        <span class="ws-section-number">4</span>
+        <div class="ws-section-header-text">
+          <h2>Growth Plan</h2>
+          <p>For each &ldquo;Need Now&rdquo; gap from Step 2, create a specific plan.</p>
+        </div>
+      </div>
+
+      <div class="growth-card">
+        <div class="growth-card-number">Gap 1</div>
+        <div class="field-group">
+          <label class="field-label">The Gap / Skill</label>
+          <input type="text" class="field-input" data-field="growth-gap-1" placeholder="e.g., Marketing &amp; client acquisition" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Resource</label>
+          <span class="field-hint">Course, book, training, mentorship, etc.</span>
+          <input type="text" class="field-input" data-field="growth-resource-1" placeholder="e.g., Complete LAUNCH Phase 3 marketing module" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Timeline</label>
+          <input type="date" class="field-input" data-field="growth-timeline-1" style="max-width: 200px;" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Success Indicator</label>
+          <span class="field-hint">How will you know you&rsquo;ve closed this gap?</span>
+          <input type="text" class="field-input" data-field="growth-indicator-1" placeholder="e.g., First 3 clients acquired through my own marketing efforts" />
+        </div>
+      </div>
+
+      <div class="growth-card">
+        <div class="growth-card-number">Gap 2</div>
+        <div class="field-group">
+          <label class="field-label">The Gap / Skill</label>
+          <input type="text" class="field-input" data-field="growth-gap-2" placeholder="Skill from your gap analysis" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Resource</label>
+          <input type="text" class="field-input" data-field="growth-resource-2" placeholder="Course, book, or training you'll use" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Timeline</label>
+          <input type="date" class="field-input" data-field="growth-timeline-2" style="max-width: 200px;" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Success Indicator</label>
+          <input type="text" class="field-input" data-field="growth-indicator-2" placeholder="How you'll know the gap is closed" />
+        </div>
+      </div>
+
+      <div class="growth-card">
+        <div class="growth-card-number">Gap 3</div>
+        <div class="field-group">
+          <label class="field-label">The Gap / Skill</label>
+          <input type="text" class="field-input" data-field="growth-gap-3" placeholder="Skill from your gap analysis" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Resource</label>
+          <input type="text" class="field-input" data-field="growth-resource-3" placeholder="Course, book, or training you'll use" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Timeline</label>
+          <input type="date" class="field-input" data-field="growth-timeline-3" style="max-width: 200px;" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">Success Indicator</label>
+          <input type="text" class="field-input" data-field="growth-indicator-3" placeholder="How you'll know the gap is closed" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ COMPETENCE STATEMENT ═══ -->
+    <div class="ws-section competence-statement-section">
+      <div class="ws-section-header">
+        <span class="ws-section-number" style="color: var(--teal);">&bull;</span>
+        <div class="ws-section-header-text">
+          <h2>Your Competence Statement</h2>
+          <p>Combine everything above into a single, grounded statement of competence.</p>
+        </div>
+      </div>
+
+      <div class="formula-ref">
+        I am qualified to <em>[what you do]</em> because <em>[your evidence]</em>. I am committed to growing in <em>[specific areas]</em> by <em>[your plan]</em>.
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-label">Writing Tip</div>
+        <p>Anchor this in facts, not feelings. Your evidence statements from the imposter syndrome lesson belong here.</p>
+      </div>
+
+      <div class="field-group">
+        <textarea class="field-textarea large" id="competence-statement" data-field="competence-statement" placeholder="I am qualified to provide personalized nutrition guidance because I hold [credential], have trained in [areas], and am strongest in [top skills]. My clients benefit from my ability to [outcomes from strengths map]. I acknowledge that [gap areas] are areas where I am actively growing, and my plan includes [specific resources and timelines]. I am committed to..." rows="10" style="min-height: 240px;"></textarea>
+        <div class="word-count">
+          <span class="word-count-number" id="wordCountNum">0</span>
+          <span class="word-count-label">words</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══ PHASE 01 COMPLETION CHECKLIST ═══ -->
+    <div class="checklist-section">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:22px;height:22px;color:var(--teal);"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        Phase 01 Completion Checklist
+      </h2>
+
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-sop" />
+          <span class="checkbox-label">Scope of practice statement drafted and shared</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-bios" />
+          <span class="checkbox-label">Three bio versions written (long, short, micro)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-pitch" />
+          <span class="checkbox-label">Elevator pitch crafted and practiced</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-goals" />
+          <span class="checkbox-label">LAUNCH goals document completed</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-niche" />
+          <span class="checkbox-label">Niche direction identified and ideal client avatar completed</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-competence-map" />
+          <span class="checkbox-label">Competence map completed (all four steps)</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-competence-stmt" />
+          <span class="checkbox-label">Competence statement written and shared</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-accountability" />
+          <span class="checkbox-label">Accountability partnership established and active</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-imposter" />
+          <span class="checkbox-label">Imposter syndrome toolkit completed</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="phase-regulatory" />
+          <span class="checkbox-label">State regulatory research completed</span>
+        </label>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="resource-footer">
+    <p>&copy; 2026 Holistic Consulting. Part of the LAUNCH Program.</p>
+    <a href="../resources.html">Back to Resources</a>
+  </footer>
+
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    (() => {
+      const STORAGE_KEY = 'hc-competence-map';
+
+      // ── Category definitions for average calculation ──
+      const categories = {
+        clinical:  { count: 8, el: 'avg-clinical-val' },
+        coaching:  { count: 7, el: 'avg-coaching-val' },
+        business:  { count: 7, el: 'avg-business-val' },
+        personal:  { count: 6, el: 'avg-personal-val' }
+      };
+
+      // ── Header scroll effect ──
+      const header = document.getElementById('resHeader');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+
+      // ── Print ──
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+      // ── Word count for competence statement ──
+      const compStatement = document.getElementById('competence-statement');
+      const wordCountEl = document.getElementById('wordCountNum');
+      function updateWordCount() {
+        const text = compStatement.value.trim();
+        const count = text ? text.split(/\s+/).length : 0;
+        wordCountEl.textContent = count;
+      }
+      compStatement.addEventListener('input', updateWordCount);
+
+      // ── Category averages ──
+      function updateCategoryAverages() {
+        Object.keys(categories).forEach(cat => {
+          const cfg = categories[cat];
+          let sum = 0, rated = 0;
+          for (let i = 1; i <= cfg.count; i++) {
+            const checked = document.querySelector(`input[name="${cat}-${i}"]:checked`);
+            if (checked) {
+              sum += parseInt(checked.value, 10);
+              rated++;
+            }
+          }
+          const el = document.getElementById(cfg.el);
+          if (rated > 0) {
+            el.textContent = (sum / rated).toFixed(1);
+          } else {
+            el.innerHTML = '&mdash;';
+          }
+        });
+      }
+
+      // ── Progress tracking (4 main steps) ──
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+
+      function updateProgress() {
+        let filled = 0;
+
+        // Step 1: Skills inventory — any radio button selected across any category
+        const anyRating = document.querySelector('.skill-grid input[type="radio"]:checked');
+        if (anyRating) filled++;
+
+        // Step 2: Gap analysis — any gap skill field has content
+        let hasGap = false;
+        for (let i = 1; i <= 5; i++) {
+          const field = document.querySelector(`[data-field="gap-skill-${i}"]`);
+          if (field && field.value.trim().length > 0) { hasGap = true; break; }
+        }
+        if (hasGap) filled++;
+
+        // Step 3: Strengths map — any strength skill field has content
+        let hasStrength = false;
+        for (let i = 1; i <= 5; i++) {
+          const field = document.querySelector(`[data-field="strength-skill-${i}"]`);
+          if (field && field.value.trim().length > 0) { hasStrength = true; break; }
+        }
+        if (hasStrength) filled++;
+
+        // Step 4: Growth plan — any growth gap field has content
+        let hasGrowth = false;
+        for (let i = 1; i <= 3; i++) {
+          const field = document.querySelector(`[data-field="growth-gap-${i}"]`);
+          if (field && field.value.trim().length > 0) { hasGrowth = true; break; }
+        }
+        if (hasGrowth) filled++;
+
+        const pct = Math.round((filled / 4) * 100);
+        progressFill.style.width = pct + '%';
+        progressText.textContent = filled + ' of 4 steps';
+      }
+
+      // ── localStorage auto-save ──
+      function saveState() {
+        const state = {};
+        // Save text fields & selects
+        document.querySelectorAll('[data-field]').forEach(el => {
+          state[el.dataset.field] = el.value;
+        });
+        // Save checkboxes
+        document.querySelectorAll('[data-check]').forEach(el => {
+          state['check:' + el.dataset.check] = el.checked;
+        });
+        // Save radio buttons
+        document.querySelectorAll('input[type="radio"]:checked').forEach(el => {
+          state['radio:' + el.name] = el.value;
+        });
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+      }
+
+      function loadState() {
+        let state;
+        try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) {}
+        if (!state) return;
+        // Restore text fields & selects
+        document.querySelectorAll('[data-field]').forEach(el => {
+          if (state[el.dataset.field] !== undefined) el.value = state[el.dataset.field];
+        });
+        // Restore checkboxes
+        document.querySelectorAll('[data-check]').forEach(el => {
+          if (state['check:' + el.dataset.check] !== undefined) el.checked = state['check:' + el.dataset.check];
+        });
+        // Restore radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+          if (state['radio:' + el.name] !== undefined && el.value === state['radio:' + el.name]) {
+            el.checked = true;
+          }
+        });
+        updateWordCount();
+        updateCategoryAverages();
+        updateProgress();
+      }
+
+      // ── Listen for changes ──
+      document.querySelectorAll('[data-field]').forEach(el => {
+        el.addEventListener('input', () => { saveState(); updateProgress(); });
+        el.addEventListener('change', () => { saveState(); updateProgress(); });
+      });
+      document.querySelectorAll('[data-check]').forEach(el => {
+        el.addEventListener('change', () => { saveState(); });
+      });
+      document.querySelectorAll('input[type="radio"]').forEach(el => {
+        el.addEventListener('change', () => {
+          saveState();
+          updateCategoryAverages();
+          updateProgress();
+        });
+      });
+
+      // ── Clear form ──
+      document.getElementById('clearBtn').addEventListener('click', () => {
+        if (!confirm('Clear all fields? This cannot be undone.')) return;
+        document.querySelectorAll('[data-field]').forEach(el => el.value = '');
+        document.querySelectorAll('[data-check]').forEach(el => el.checked = false);
+        document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+        updateWordCount();
+        updateCategoryAverages();
+        updateProgress();
+      });
+
+      // ── Initialize ──
+      loadState();
+    })();
+  </script>
+
+</body>
+</html>

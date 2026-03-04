@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Referral Decision Tree & Network Builder | Holistic Consulting</title>
+  <meta name="description" content="A decision tree to know exactly when to refer clients, plus a network builder to organize your professional referral contacts." />
+  <link rel="canonical" href="https://business.holisticconsultinghq.com/resources/referral-decision-tree.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="resource-base.css" />
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-YPMjOMyU8ChKAw77uwdj2.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+<style>
+  /* ── Decision Tree: Page-Specific Styles ── */
+
+  .part-heading {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .part-subheading {
+    font-size: 0.88rem;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 620px;
+  }
+
+  /* Decision Step Cards */
+  .decision-step {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 8px;
+    padding: 2rem 2rem 1.75rem;
+    position: relative;
+    transition: box-shadow 0.3s;
+  }
+  .decision-step:hover {
+    box-shadow: 0 4px 20px rgba(44,74,110,0.06);
+  }
+  .decision-step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .decision-step-number {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--teal);
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+  .decision-step-question {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Watch For */
+  .watch-for {
+    margin-bottom: 1.25rem;
+  }
+  .watch-for-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 0.4rem;
+  }
+  .watch-for-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .watch-for-list li {
+    font-size: 0.78rem;
+    color: var(--charcoal);
+    background: var(--stone);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+
+  /* Path Boxes */
+  .decision-paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .path-yes {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+  }
+  .path-yes .path-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--danger);
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .path-yes .path-label svg {
+    width: 14px;
+    height: 14px;
+  }
+  .path-yes .path-action {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.15rem;
+  }
+  .path-yes .path-target {
+    font-size: 0.78rem;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  .path-no {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+  }
+  .path-no .path-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--success);
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .path-no .path-label svg {
+    width: 14px;
+    height: 14px;
+  }
+  .path-no .path-action {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  /* Crisis Callout inside a step */
+  .crisis-callout {
+    background: #FEF2F2;
+    border: 2px solid var(--danger);
+    border-radius: 6px;
+    padding: 0.85rem 1.15rem;
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .crisis-callout svg {
+    width: 20px;
+    height: 20px;
+    color: var(--danger);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .crisis-callout-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--danger);
+    line-height: 1.45;
+  }
+  .crisis-callout-text a {
+    color: var(--danger);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .crisis-callout-text a:hover {
+    color: var(--charcoal);
+  }
+
+  /* Arrow Connector */
+  .step-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.25rem 0;
+    margin: 0;
+  }
+  .step-connector-line {
+    width: 2px;
+    height: 20px;
+    background: var(--border);
+  }
+  .step-connector-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--border);
+  }
+
+  /* Success Card */
+  .success-card {
+    background: #F0FDF4;
+    border: 2px solid #86EFAC;
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    text-align: center;
+  }
+  .success-card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--success);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  .success-card-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--white);
+  }
+  .success-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.35rem;
+  }
+  .success-card p {
+    font-size: 0.88rem;
+    color: var(--slate);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Part Divider */
+  .part-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .decision-step {
+      padding: 1.5rem 1.25rem 1.25rem;
+    }
+    .decision-paths {
+      grid-template-columns: 1fr;
+    }
+    .decision-step-question {
+      font-size: 1.15rem;
+    }
+    .success-card {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+
+  /* ── Print ── */
+  @media print {
+    .decision-step {
+      border-left: 3px solid #999;
+      box-shadow: none;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom: 0.75rem;
+      padding: 1.25rem;
+    }
+    .decision-step-number {
+      background: #666;
+    }
+    .step-connector {
+      padding: 0.1rem 0;
+    }
+    .step-connector-line {
+      height: 12px;
+    }
+    .path-yes {
+      background: #fdf0f0;
+      border-color: #ddd;
+    }
+    .path-no {
+      background: #f0f7f0;
+      border-color: #ddd;
+    }
+    .success-card {
+      background: #f0f7f0;
+      border-color: #999;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .success-card-icon {
+      background: #666;
+    }
+    .crisis-callout {
+      border-color: #999;
+      background: #fdf0f0;
+    }
+    .watch-for-list li {
+      background: #f5f5f5;
+      border-color: #ddd;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="resource-header" id="resHeader">
+    <div class="resource-header-inner">
+      <a href="../index.html" class="resource-header-brand">
+        <span class="logo-text">Holistic Consulting</span>
+        <span class="logo-sub">Business Resources</span>
+      </a>
+      <nav class="resource-header-nav">
+        <a href="../resources.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+          All Resources
+        </a>
+        <button class="btn-clear" id="clearBtn" type="button">Clear Form</button>
+        <button class="btn-print" id="printBtn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 12h.008v.008h-.008V12zm-2.25 0h.008v.008H16.5V12z" /></svg>
+          Print / Save PDF
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══ PAGE CONTENT ═══ -->
+  <main class="resource-page" id="resourcePage">
+
+    <!-- Title Block -->
+    <div class="resource-title-block">
+      <div class="resource-eyebrow">LAUNCH Program &middot; Phase 1 &middot; Lesson 5</div>
+      <h1>Referral Decision Tree &amp; <em>Network Builder</em></h1>
+      <p class="resource-subtitle">Know exactly when to refer, who to refer to, and how to build your professional network. This resource gives you a clear framework so you never second-guess a referral decision.</p>
+      <div class="resource-meta">
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          25 minutes
+        </span>
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384 3.18A1.125 1.125 0 014.5 17.29V5.09a1.125 1.125 0 011.536-1.06l5.384 3.18m0 0l5.384-3.18A1.125 1.125 0 0118 5.09v12.2a1.125 1.125 0 01-1.536 1.06l-5.384-3.18m0 0V4.5m0 15v-4.83" /></svg>
+          2 tools
+        </span>
+        <span class="resource-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 12h.008v.008h-.008V12zm-2.25 0h.008v.008H16.5V12z" /></svg>
+          Printable
+        </span>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-bar-wrap">
+        <div class="progress-label">
+          <span>Network Builder Progress</span>
+          <span id="progressText">0 of 5 providers</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         PART 1: DECISION TREE
+         ════════════════════════════════════════════════════════ -->
+    <h2 class="part-heading">Part 1: Decision Tree</h2>
+    <p class="part-subheading">Work through these five questions in order when you&rsquo;re unsure whether a client situation falls within your scope. If you reach a YES at any step, refer before proceeding.</p>
+
+
+    <!-- ── Step 1 ── -->
+    <div class="decision-step">
+      <div class="decision-step-header">
+        <span class="decision-step-number">Step 1</span>
+        <h2 class="decision-step-question">Does this client need a medical diagnosis?</h2>
+      </div>
+      <div class="watch-for">
+        <div class="watch-for-label">Watch For</div>
+        <ul class="watch-for-list">
+          <li>Unexplained weight changes</li>
+          <li>Persistent pain</li>
+          <li>Blood in stool</li>
+          <li>New lumps</li>
+          <li>Severe fatigue</li>
+          <li>Cardiac symptoms</li>
+        </ul>
+      </div>
+      <div class="decision-paths">
+        <div class="path-yes">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+            Yes &mdash; Refer
+          </div>
+          <div class="path-action">Refer to:</div>
+          <div class="path-target">PCP or specialist physician</div>
+        </div>
+        <div class="path-no">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            No &mdash; Continue
+          </div>
+          <div class="path-action">Proceed to Step 2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="step-connector">
+      <div class="step-connector-line"></div>
+      <div class="step-connector-arrow"></div>
+    </div>
+
+
+    <!-- ── Step 2 ── -->
+    <div class="decision-step">
+      <div class="decision-step-header">
+        <span class="decision-step-number">Step 2</span>
+        <h2 class="decision-step-question">Are there signs of disordered eating or mental health concerns?</h2>
+      </div>
+      <div class="watch-for">
+        <div class="watch-for-label">Watch For</div>
+        <ul class="watch-for-list">
+          <li>Restriction</li>
+          <li>Bingeing / purging</li>
+          <li>Obsessive food behaviors</li>
+          <li>Depression</li>
+          <li>Anxiety</li>
+          <li>Trauma responses</li>
+          <li>Suicidal ideation</li>
+        </ul>
+      </div>
+      <div class="decision-paths">
+        <div class="path-yes">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+            Yes &mdash; Refer
+          </div>
+          <div class="path-action">Refer to:</div>
+          <div class="path-target">Licensed mental health professional or eating disorder specialist</div>
+        </div>
+        <div class="path-no">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            No &mdash; Continue
+          </div>
+          <div class="path-action">Proceed to Step 3</div>
+        </div>
+      </div>
+      <!-- Crisis Callout -->
+      <div class="crisis-callout">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+        <div class="crisis-callout-text">
+          If suicidal ideation is present: immediately provide the <a href="https://988lifeline.org/" target="_blank" rel="noopener">988 Suicide &amp; Crisis Lifeline</a> &mdash; call or text <strong>988</strong>. Do not attempt to manage this yourself.
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="step-connector">
+      <div class="step-connector-line"></div>
+      <div class="step-connector-arrow"></div>
+    </div>
+
+
+    <!-- ── Step 3 ── -->
+    <div class="decision-step">
+      <div class="decision-step-header">
+        <span class="decision-step-number">Step 3</span>
+        <h2 class="decision-step-question">Is the client asking about medications or medical treatment?</h2>
+      </div>
+      <div class="watch-for">
+        <div class="watch-for-label">Watch For</div>
+        <ul class="watch-for-list">
+          <li>Wanting to stop / start medications</li>
+          <li>Asking you to interpret labs diagnostically</li>
+          <li>Requesting treatment for a named condition</li>
+        </ul>
+      </div>
+      <div class="decision-paths">
+        <div class="path-yes">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+            Yes &mdash; Refer
+          </div>
+          <div class="path-action">Refer to:</div>
+          <div class="path-target">Prescribing physician or specialist</div>
+        </div>
+        <div class="path-no">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            No &mdash; Continue
+          </div>
+          <div class="path-action">Proceed to Step 4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="step-connector">
+      <div class="step-connector-line"></div>
+      <div class="step-connector-arrow"></div>
+    </div>
+
+
+    <!-- ── Step 4 ── -->
+    <div class="decision-step">
+      <div class="decision-step-header">
+        <span class="decision-step-number">Step 4</span>
+        <h2 class="decision-step-question">Is this population or condition outside your training?</h2>
+      </div>
+      <div class="watch-for">
+        <div class="watch-for-label">Watch For</div>
+        <ul class="watch-for-list">
+          <li>Pediatric nutrition</li>
+          <li>Pregnancy complications</li>
+          <li>Renal disease</li>
+          <li>Cancer nutrition</li>
+          <li>Advanced diabetes management</li>
+          <li>Eating disorders</li>
+        </ul>
+      </div>
+      <div class="decision-paths">
+        <div class="path-yes">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+            Yes &mdash; Refer
+          </div>
+          <div class="path-action">Refer to:</div>
+          <div class="path-target">Specialist with specific training in that area</div>
+        </div>
+        <div class="path-no">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            No &mdash; Continue
+          </div>
+          <div class="path-action">Proceed to Step 5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="step-connector">
+      <div class="step-connector-line"></div>
+      <div class="step-connector-arrow"></div>
+    </div>
+
+
+    <!-- ── Step 5 ── -->
+    <div class="decision-step">
+      <div class="decision-step-header">
+        <span class="decision-step-number">Step 5</span>
+        <h2 class="decision-step-question">Is the client not progressing despite compliance?</h2>
+      </div>
+      <div class="watch-for">
+        <div class="watch-for-label">Watch For</div>
+        <ul class="watch-for-list">
+          <li>Following your plan but no improvement</li>
+          <li>Symptoms worsening</li>
+          <li>Plateau despite adherence</li>
+        </ul>
+      </div>
+      <div class="decision-paths">
+        <div class="path-yes">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" /></svg>
+            Yes &mdash; Refer
+          </div>
+          <div class="path-action">Refer to:</div>
+          <div class="path-target">PCP or functional medicine doctor for deeper evaluation</div>
+        </div>
+        <div class="path-no">
+          <div class="path-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            No &mdash; Proceed with Confidence
+          </div>
+          <div class="path-action">This client is within your scope</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="step-connector">
+      <div class="step-connector-line"></div>
+      <div class="step-connector-arrow"></div>
+    </div>
+
+    <!-- Success Card -->
+    <div class="success-card">
+      <div class="success-card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      </div>
+      <h3>Proceed with Confidence</h3>
+      <p>You&rsquo;ve worked through all five decision points. This client&rsquo;s needs fall within your scope of practice. Move forward with your assessment and plan, and revisit this tree any time a new concern arises during care.</p>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         PART 2: REFERRAL NETWORK BUILDER
+         ════════════════════════════════════════════════════════ -->
+    <hr class="part-divider" />
+
+    <h2 class="part-heading">Part 2: Referral Network Builder</h2>
+    <p class="part-subheading">Build your bench. List at least 3&ndash;5 professionals you can refer to. Include local providers, virtual options, and specialists relevant to your client population.</p>
+
+
+    <!-- Provider 1 -->
+    <div class="ws-section" data-section="1">
+      <div class="ws-section-header">
+        <span class="ws-section-number">1</span>
+        <div class="ws-section-header-text">
+          <h2>Provider 1</h2>
+          <p>A primary care physician, functional medicine doctor, or general practitioner in your area.</p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p1-name">Provider Name</label>
+        <input type="text" class="field-input" id="p1-name" data-field="p1-name" placeholder="e.g., Dr. Sarah Mitchell" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p1-specialty">Specialty</label>
+        <input type="text" class="field-input" id="p1-specialty" data-field="p1-specialty" placeholder="e.g., Family Medicine, Functional Medicine" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p1-contact">Phone / Email</label>
+        <input type="text" class="field-input" id="p1-contact" data-field="p1-contact" placeholder="e.g., (555) 123-4567 or sarah@example.com" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p1-process">Preferred Referral Process</label>
+        <textarea class="field-textarea" id="p1-process" data-field="p1-process" placeholder="How does this provider prefer to receive referrals? e.g., direct email, patient self-referral, fax intake form..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p1-notes">Notes on Approach / Style / Insurance</label>
+        <textarea class="field-textarea" id="p1-notes" data-field="p1-notes" placeholder="e.g., Integrative-friendly, accepts Blue Cross, warm and patient-centered..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+
+    <!-- Provider 2 -->
+    <div class="ws-section" data-section="2">
+      <div class="ws-section-header">
+        <span class="ws-section-number">2</span>
+        <div class="ws-section-header-text">
+          <h2>Provider 2</h2>
+          <p>A licensed mental health professional &mdash; therapist, psychologist, or counselor.</p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p2-name">Provider Name</label>
+        <input type="text" class="field-input" id="p2-name" data-field="p2-name" placeholder="e.g., Lisa Chen, LCSW" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p2-specialty">Specialty</label>
+        <input type="text" class="field-input" id="p2-specialty" data-field="p2-specialty" placeholder="e.g., CBT, Trauma-Informed Therapy, Eating Disorders" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p2-contact">Phone / Email</label>
+        <input type="text" class="field-input" id="p2-contact" data-field="p2-contact" placeholder="e.g., (555) 234-5678 or lisa@example.com" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p2-process">Preferred Referral Process</label>
+        <textarea class="field-textarea" id="p2-process" data-field="p2-process" placeholder="How does this provider prefer to receive referrals?" rows="3" style="min-height: 80px;"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p2-notes">Notes on Approach / Style / Insurance</label>
+        <textarea class="field-textarea" id="p2-notes" data-field="p2-notes" placeholder="e.g., Specializes in women's health, virtual sessions available, sliding scale..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+
+    <!-- Provider 3 -->
+    <div class="ws-section" data-section="3">
+      <div class="ws-section-header">
+        <span class="ws-section-number">3</span>
+        <div class="ws-section-header-text">
+          <h2>Provider 3</h2>
+          <p>A specialist physician &mdash; gastroenterologist, endocrinologist, or other relevant specialist.</p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p3-name">Provider Name</label>
+        <input type="text" class="field-input" id="p3-name" data-field="p3-name" placeholder="e.g., Dr. James Rivera, MD" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p3-specialty">Specialty</label>
+        <input type="text" class="field-input" id="p3-specialty" data-field="p3-specialty" placeholder="e.g., Gastroenterology, Endocrinology" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p3-contact">Phone / Email</label>
+        <input type="text" class="field-input" id="p3-contact" data-field="p3-contact" placeholder="e.g., (555) 345-6789 or office@example.com" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p3-process">Preferred Referral Process</label>
+        <textarea class="field-textarea" id="p3-process" data-field="p3-process" placeholder="How does this provider prefer to receive referrals?" rows="3" style="min-height: 80px;"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p3-notes">Notes on Approach / Style / Insurance</label>
+        <textarea class="field-textarea" id="p3-notes" data-field="p3-notes" placeholder="e.g., Open to working with nutrition practitioners, 2-week wait for new patients..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+
+    <!-- Provider 4 -->
+    <div class="ws-section" data-section="4">
+      <div class="ws-section-header">
+        <span class="ws-section-number">4</span>
+        <div class="ws-section-header-text">
+          <h2>Provider 4</h2>
+          <p>A registered dietitian, eating disorder specialist, or complementary practitioner.</p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p4-name">Provider Name</label>
+        <input type="text" class="field-input" id="p4-name" data-field="p4-name" placeholder="e.g., Amanda Torres, RD" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p4-specialty">Specialty</label>
+        <input type="text" class="field-input" id="p4-specialty" data-field="p4-specialty" placeholder="e.g., Registered Dietitian, Eating Disorder Specialist" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p4-contact">Phone / Email</label>
+        <input type="text" class="field-input" id="p4-contact" data-field="p4-contact" placeholder="e.g., (555) 456-7890 or amanda@example.com" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p4-process">Preferred Referral Process</label>
+        <textarea class="field-textarea" id="p4-process" data-field="p4-process" placeholder="How does this provider prefer to receive referrals?" rows="3" style="min-height: 80px;"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p4-notes">Notes on Approach / Style / Insurance</label>
+        <textarea class="field-textarea" id="p4-notes" data-field="p4-notes" placeholder="e.g., HAES-aligned, telehealth available, great with adolescents..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+
+    <!-- Provider 5 -->
+    <div class="ws-section" data-section="5">
+      <div class="ws-section-header">
+        <span class="ws-section-number">5</span>
+        <div class="ws-section-header-text">
+          <h2>Provider 5</h2>
+          <p>Any additional professional &mdash; acupuncturist, chiropractor, pelvic floor therapist, or another referral partner.</p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p5-name">Provider Name</label>
+        <input type="text" class="field-input" id="p5-name" data-field="p5-name" placeholder="e.g., Dr. Kim Patel, DC" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p5-specialty">Specialty</label>
+        <input type="text" class="field-input" id="p5-specialty" data-field="p5-specialty" placeholder="e.g., Chiropractic, Acupuncture, Physical Therapy" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p5-contact">Phone / Email</label>
+        <input type="text" class="field-input" id="p5-contact" data-field="p5-contact" placeholder="e.g., (555) 567-8901 or kim@example.com" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p5-process">Preferred Referral Process</label>
+        <textarea class="field-textarea" id="p5-process" data-field="p5-process" placeholder="How does this provider prefer to receive referrals?" rows="3" style="min-height: 80px;"></textarea>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="p5-notes">Notes on Approach / Style / Insurance</label>
+        <textarea class="field-textarea" id="p5-notes" data-field="p5-notes" placeholder="e.g., Great rapport with holistic clients, accepts most PPO plans..." rows="3" style="min-height: 80px;"></textarea>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         PART 3: READINESS CHECKLIST
+         ════════════════════════════════════════════════════════ -->
+    <hr class="part-divider" />
+
+    <div class="checklist-section">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:22px;height:22px;color:var(--teal);"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        Readiness Checklist
+      </h2>
+
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-3-pros" />
+          <span class="checkbox-label">I have identified at least 3 local or virtual professionals for my referral network</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-outreach" />
+          <span class="checkbox-label">I have drafted an introductory outreach message</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-scripts" />
+          <span class="checkbox-label">I have practiced my referral conversation scripts out loud</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-articulate" />
+          <span class="checkbox-label">I can clearly articulate when a situation requires a referral</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-988" />
+          <span class="checkbox-label">I have the 988 Suicide &amp; Crisis Lifeline information accessible</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" data-check="rc-contacted" />
+          <span class="checkbox-label">I have contacted at least one professional on my list to begin building the relationship</span>
+        </label>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="resource-footer">
+    <p>&copy; 2026 Holistic Consulting. Part of the LAUNCH Program.</p>
+    <a href="../resources.html">Back to Resources</a>
+  </footer>
+
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    (() => {
+      const STORAGE_KEY = 'hc-referral-tree';
+
+      // ── Header scroll effect ──
+      const header = document.getElementById('resHeader');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+
+      // ── Print ──
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+      // ── Progress tracking (counts provider blocks with at least one field filled) ──
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      const sections = document.querySelectorAll('.ws-section[data-section]');
+
+      function updateProgress() {
+        let filled = 0;
+        sections.forEach(section => {
+          const inputs = section.querySelectorAll('.field-input, .field-textarea');
+          const hasContent = Array.from(inputs).some(inp => inp.value.trim().length > 0);
+          if (hasContent) filled++;
+        });
+        const pct = Math.round((filled / sections.length) * 100);
+        progressFill.style.width = pct + '%';
+        progressText.textContent = filled + ' of ' + sections.length + ' providers';
+      }
+
+      // ── localStorage auto-save ──
+      function saveState() {
+        const state = {};
+        // Save text fields
+        document.querySelectorAll('[data-field]').forEach(el => {
+          state[el.dataset.field] = el.value;
+        });
+        // Save checkboxes
+        document.querySelectorAll('[data-check]').forEach(el => {
+          state['check:' + el.dataset.check] = el.checked;
+        });
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+      }
+
+      function loadState() {
+        let state;
+        try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) {}
+        if (!state) return;
+        // Restore text fields
+        document.querySelectorAll('[data-field]').forEach(el => {
+          if (state[el.dataset.field] !== undefined) el.value = state[el.dataset.field];
+        });
+        // Restore checkboxes
+        document.querySelectorAll('[data-check]').forEach(el => {
+          if (state['check:' + el.dataset.check] !== undefined) el.checked = state['check:' + el.dataset.check];
+        });
+        updateProgress();
+      }
+
+      // Listen for changes
+      document.querySelectorAll('[data-field]').forEach(el => {
+        el.addEventListener('input', () => { saveState(); updateProgress(); });
+      });
+      document.querySelectorAll('[data-check]').forEach(el => {
+        el.addEventListener('change', () => { saveState(); });
+      });
+
+      // ── Clear form ──
+      document.getElementById('clearBtn').addEventListener('click', () => {
+        if (!confirm('Clear all fields? This cannot be undone.')) return;
+        document.querySelectorAll('[data-field]').forEach(el => el.value = '');
+        document.querySelectorAll('[data-check]').forEach(el => el.checked = false);
+        try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+        updateProgress();
+      });
+
+      // ── Initialize ──
+      loadState();
+    })();
+  </script>
+
+</body>
+</html>
