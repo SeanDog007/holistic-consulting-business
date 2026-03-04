@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Resources | Holistic Consulting</title>
+  <meta name="description" content="Free tools, guides, and resources to help nutrition practitioners build sustainable practices. No fluff — operator-level guidance for the business side of your career." />
+  <link rel="canonical" href="https://business.holisticconsultinghq.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Business Resources | Holistic Consulting" />
+  <meta property="og:description" content="Free tools, guides, and resources to help nutrition practitioners build sustainable practices." />
+  <meta property="og:url" content="https://business.holisticconsultinghq.com/" />
+  <meta property="og:site_name" content="Holistic Consulting" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #2C4A6E;
+      --navy-lt:     #3E6490;
+      --navy-tint:   #E0E6EE;
+      --navy-deep:   #1A2536;
+      --bronze:      #B89A4A;
+      --bronze-lt:   #CCAE5E;
+      --bronze-tint: #F5EFE0;
+      --charcoal:    #1E2A38;
+      --slate:       #5A5E62;
+      --offwhite:    #E8E6E0;
+      --stone:       #F2F0EB;
+      --white:       #FFFFFF;
+      --border:      #D8D5CE;
+      --dark:        #1A2536;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --ease-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--stone);
+      color: var(--charcoal);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: 0.018;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .noise {
+      position: absolute; inset: 0;
+      pointer-events: none; z-index: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Section label pattern */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--bronze);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before {
+      content: ''; width: 32px; height: 2px;
+      background: var(--bronze); flex-shrink: 0;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--white); background: var(--bronze);
+      border: 2px solid var(--bronze);
+      padding: 0.7rem 1.6rem; border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease-out), background 0.25s, box-shadow 0.25s;
+      box-shadow: 0 2px 8px rgba(184,154,74,0.15);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: var(--bronze-lt);
+      border-color: var(--bronze-lt);
+      box-shadow: 0 4px 16px rgba(184,154,74,0.25);
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--bronze); outline-offset: 2px;
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--navy); background: transparent;
+      border: 2px solid var(--navy);
+      padding: 0.7rem 1.6rem; border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease-out), border-color 0.25s, color 0.25s, background 0.25s;
+    }
+    .btn-outline:hover {
+      transform: translateY(-1px);
+      color: var(--white);
+      background: var(--navy);
+    }
+    .btn-outline:focus-visible {
+      outline: 2px solid var(--navy); outline-offset: 2px;
+    }
+    .btn-outline:active { transform: translateY(0); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--navy); background: none;
+      border: none; padding: 0; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--bronze); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+    .btn-ghost svg { transition: transform 0.2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
+
+    /* ─── Fade-up animation ─── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s var(--ease-smooth);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; height: 72px;
+      background: rgba(242,240,235,0.85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(216,213,206,0.6);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .site-header.scrolled {
+      background: rgba(242,240,235,0.95);
+      box-shadow: 0 1px 12px rgba(30,42,56,0.06);
+    }
+    .header-inner {
+      max-width: 1120px; margin: 0 auto;
+      padding: 0 2rem; height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-logo { display: flex; flex-direction: column; gap: 0; }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--charcoal); letter-spacing: -0.01em;
+    }
+    .logo-sub {
+      font-family: var(--font-body);
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--bronze); margin-top: -2px;
+    }
+    .header-nav {
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .header-nav a {
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--slate); position: relative;
+      transition: color 0.2s;
+    }
+    .header-nav a::after {
+      content: ''; position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--bronze);
+      transition: width 0.25s ease;
+    }
+    .header-nav a:hover { color: var(--charcoal); }
+    .header-nav a:hover::after { width: 100%; }
+    .header-nav a:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+
+    .header-nav a.header-cta {
+      font-family: var(--font-body);
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--white); background: var(--navy);
+      border: none; padding: 0.5rem 1.25rem;
+      border-radius: 5px; cursor: pointer;
+      transition: transform 0.3s var(--ease-out), background 0.2s;
+    }
+    .header-nav a.header-cta:hover { background: var(--navy-lt); color: var(--white); transform: translateY(-1px); }
+    .header-cta:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+    .header-cta:active { transform: translateY(0); }
+
+    .menu-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; padding: 6px; width: 36px; height: 36px;
+      flex-direction: column; justify-content: center; gap: 5px;
+    }
+    .menu-toggle span {
+      display: block; width: 22px; height: 2px;
+      background: var(--charcoal); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .header-nav {
+        position: fixed; top: 72px; right: -100%;
+        width: 280px; height: calc(100vh - 72px);
+        background: var(--white);
+        flex-direction: column; align-items: stretch;
+        padding: 2rem;
+        box-shadow: -8px 0 32px rgba(30,42,56,0.08);
+        transition: right 0.3s ease;
+        gap: 0;
+      }
+      .header-nav.open { right: 0; }
+      .header-nav a {
+        font-size: 0.9rem; padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .header-nav a::after { display: none; }
+      .header-cta { margin-top: 1rem; text-align: center; }
+    }
+
+
+    /* ══════════════════════════════════════
+       SECTION 1 — HERO
+    ══════════════════════════════════════ */
+    .hero {
+      padding: 140px 0 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero .container {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--bronze);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 32px; height: 2px;
+      background: var(--bronze); flex-shrink: 0;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.02em; line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { color: var(--navy); font-style: italic; }
+    .hero-body {
+      font-size: 1.05rem; line-height: 1.75; color: var(--slate);
+      max-width: 480px; margin-bottom: 2rem;
+    }
+    .hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* Right side — stats/visual */
+    .hero-visual {
+      position: relative; z-index: 2;
+      display: flex; justify-content: center;
+    }
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; width: 100%; max-width: 400px;
+    }
+    .hero-stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+      text-align: center; position: relative;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .hero-stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(44,74,110,0.06);
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--navy); line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .hero-stat-label {
+      font-size: 0.72rem; font-weight: 500;
+      color: var(--slate); line-height: 1.4;
+    }
+    .hero-stat:nth-child(2) .hero-stat-num { color: var(--bronze); }
+    .hero-stat:nth-child(3) { grid-column: 1 / -1; }
+    .hero-stat:nth-child(3) .hero-stat-num { color: var(--charcoal); }
+
+    .hero::before {
+      content: ''; position: absolute;
+      top: -120px; left: -200px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(44,74,110,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute;
+      bottom: -80px; right: -120px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,154,74,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual { order: -1; }
+      .hero-stats { max-width: 340px; }
+    }
+
+
+    /* ══════════════════════════════════════
+       SECTION 2 — FEATURED CONTENT
+    ══════════════════════════════════════ */
+    .featured {
+      padding: 5rem 0; background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .featured-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+    .featured-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+    .featured-header h2 em { color: var(--navy); font-style: italic; }
+
+    .featured-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 780px;
+    }
+    .featured-card {
+      background: var(--stone); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(44,74,110,0.08);
+    }
+    .featured-card-img {
+      height: 160px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .featured-card-img svg {
+      width: 48px; height: 48px; opacity: 0.35;
+    }
+    .featured-card-img.type-resource {
+      background: linear-gradient(135deg, var(--navy-tint), #d4dce8);
+    }
+    .featured-card-img.type-resource svg { color: var(--navy); }
+    .featured-card-img.type-guide {
+      background: linear-gradient(135deg, #e6ede2, #d5e0cf);
+    }
+    .featured-card-img.type-guide svg { color: #4a6e4a; }
+
+    .featured-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .featured-card-badge {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px;
+      display: inline-block; width: fit-content;
+      margin-bottom: 0.6rem;
+    }
+    .badge-resource { background: var(--navy-tint); color: var(--navy); }
+    .badge-guide { background: #e6ede2; color: #3d5a3d; }
+
+    .featured-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--charcoal); letter-spacing: -0.01em;
+      margin-bottom: 0.4rem; line-height: 1.3;
+    }
+    .featured-card-body p {
+      font-size: 0.85rem; color: var(--slate);
+      line-height: 1.65; margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════
+       SECTION 3 — BROWSE BY TOPIC
+    ══════════════════════════════════════ */
+    .topics {
+      padding: 5rem 0;
+      position: relative; overflow: hidden;
+    }
+    .topics-header {
+      text-align: center; max-width: 600px; margin: 0 auto 3rem;
+    }
+    .topics-header .section-label { justify-content: center; }
+    .topics-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.01em; margin-bottom: 0.75rem;
+    }
+    .topics-header h2 em { color: var(--navy); font-style: italic; }
+    .topics-header p {
+      font-size: 0.95rem; color: var(--slate); max-width: 480px; margin: 0 auto;
+    }
+
+    .topics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .topic-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.75rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s, border-color 0.25s;
+      cursor: pointer; position: relative;
+    }
+    .topic-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(44,74,110,0.07);
+      border-color: var(--navy-tint);
+    }
+    .topic-card:focus-visible {
+      outline: 2px solid var(--navy); outline-offset: 2px;
+    }
+    .topic-card:active { transform: translateY(0); }
+    .topic-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--navy-tint);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .topic-icon svg { width: 22px; height: 22px; color: var(--navy); }
+    .topic-card:nth-child(2) .topic-icon { background: var(--bronze-tint); }
+    .topic-card:nth-child(2) .topic-icon svg { color: var(--bronze); }
+    .topic-card:nth-child(4) .topic-icon { background: #e6ede2; }
+    .topic-card:nth-child(4) .topic-icon svg { color: #4a6e4a; }
+    .topic-card:nth-child(5) .topic-icon { background: #e8e0f0; }
+    .topic-card:nth-child(5) .topic-icon svg { color: #5a4a7e; }
+    .topic-card:nth-child(6) .topic-icon { background: #f0e8e0; }
+    .topic-card:nth-child(6) .topic-icon svg { color: #7e5a3a; }
+
+    .topic-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--charcoal); letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+    .topic-info p {
+      font-size: 0.8rem; color: var(--slate); line-height: 1.55;
+    }
+    .topic-count {
+      position: absolute; top: 1rem; right: 1rem;
+      font-size: 0.65rem; font-weight: 600;
+      color: var(--slate); background: var(--stone);
+      padding: 2px 8px; border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .topics-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .topics-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════
+       SECTION 4 — FREE RESOURCES
+    ══════════════════════════════════════ */
+    .resources {
+      padding: 5rem 0; background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .resources-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+    .resources-header-left h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+    .resources-header-left h2 em { color: var(--navy); font-style: italic; }
+
+    .resources-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .resource-card {
+      background: var(--stone); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.75rem;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(44,74,110,0.08);
+    }
+    .resource-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--navy-tint);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .resource-icon svg { width: 24px; height: 24px; color: var(--navy); }
+    .resource-type {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--bronze); margin-bottom: 0.4rem;
+    }
+    .resource-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--charcoal); letter-spacing: -0.01em;
+      margin-bottom: 0.4rem; line-height: 1.3;
+    }
+    .resource-card p {
+      font-size: 0.82rem; color: var(--slate);
+      line-height: 1.6; margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .resource-card .btn-outline {
+      font-size: 0.75rem; padding: 0.55rem 1.1rem;
+      width: fit-content;
+    }
+
+    @media (max-width: 900px) {
+      .resources-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .resources-grid { grid-template-columns: 1fr; }
+    }
+
+
+
+    /* ══════════════════════════════════════
+       SECTION 6 — PROGRAMS CTA
+    ══════════════════════════════════════ */
+    .programs {
+      padding: 5rem 0; background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .programs-header {
+      text-align: center; max-width: 600px; margin: 0 auto 1rem;
+    }
+    .programs-header .section-label { justify-content: center; }
+    .programs-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.01em; margin-bottom: 0.75rem;
+    }
+    .programs-header h2 em { color: var(--navy); font-style: italic; }
+    .programs-header p {
+      font-size: 0.95rem; color: var(--slate);
+      max-width: 520px; margin: 0 auto 2.5rem;
+    }
+
+    .programs-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 800px; margin: 0 auto;
+    }
+    .program-card {
+      background: var(--stone); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.25rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .program-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(44,74,110,0.07);
+    }
+    .program-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+    }
+    .program-card.launch::before {
+      background: linear-gradient(90deg, var(--navy), var(--navy-lt));
+    }
+    .program-card.grow::before {
+      background: linear-gradient(90deg, var(--bronze), var(--bronze-lt));
+    }
+    .program-stage {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .program-card.launch .program-stage { color: var(--navy); }
+    .program-card.grow .program-stage { color: var(--bronze); }
+    .program-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 600;
+      color: var(--charcoal); letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .program-card > p {
+      font-size: 0.88rem; color: var(--slate);
+      line-height: 1.65; margin-bottom: 1.5rem;
+    }
+    .program-price {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--charcoal); margin-bottom: 1rem;
+    }
+    .program-price span {
+      font-size: 0.78rem; font-weight: 400; color: var(--slate);
+    }
+
+    @media (max-width: 640px) {
+      .programs-grid { grid-template-columns: 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════
+       SECTION 7 — TESTIMONIALS
+    ══════════════════════════════════════ */
+    .testimonials {
+      padding: 4rem 0;
+      position: relative; overflow: hidden;
+    }
+    .testimonials-header {
+      text-align: center; margin-bottom: 2.5rem;
+    }
+    .testimonials-header .section-label { justify-content: center; }
+    .testimonials-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 600; color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+    .testimonials-header h2 em { color: var(--navy); font-style: italic; }
+
+    .testimonials-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .testimonial-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+      display: flex; flex-direction: column;
+    }
+    .testimonial-quote {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 500;
+      font-style: italic; color: var(--charcoal);
+      line-height: 1.55; flex: 1;
+      margin-bottom: 1rem; position: relative;
+      padding-left: 1rem;
+      border-left: 2px solid var(--bronze);
+    }
+    .testimonial-attr {
+      display: flex; align-items: center; gap: 10px;
+      padding-top: 0.75rem; border-top: 1px solid var(--border);
+    }
+    .testimonial-initials {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--navy-tint);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem; font-weight: 600; color: var(--navy);
+    }
+    .testimonial-name {
+      font-size: 0.78rem; font-weight: 600; color: var(--charcoal);
+    }
+    .testimonial-role {
+      font-size: 0.68rem; color: var(--slate);
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-strip { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .testimonials-strip { grid-template-columns: 1fr; }
+    }
+
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    .site-footer {
+      background: var(--dark); padding: 3.5rem 0 2rem;
+      position: relative; overflow: hidden;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 1.2fr repeat(3, auto);
+      gap: 3rem; align-items: start;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--white); margin-bottom: 0.25rem;
+    }
+    .footer-brand .footer-tagline {
+      font-family: var(--font-display);
+      font-size: 0.85rem; font-style: italic;
+      color: rgba(255,255,255,0.4); margin-bottom: 1rem;
+    }
+    .footer-brand > p {
+      font-size: 0.8rem; color: rgba(255,255,255,0.35);
+      max-width: 300px; line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.75rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-col a:focus-visible { outline: 1px solid rgba(255,255,255,0.4); outline-offset: 2px; }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+    }
+    .footer-bottom a {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      text-decoration: underline; text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <span class="logo-text">Holistic Consulting</span>
+        <span class="logo-sub">Business Resources</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header-nav" id="headerNav">
+        <a href="#resources">Resources</a>
+        <a href="#topics">Topics</a>
+        <a href="https://holisticconsultinghq.com/programs.html" class="header-cta">Explore Programs</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══ SECTION 1: HERO ═══ -->
+  <section class="hero">
+    <div class="noise"></div>
+    <div class="container">
+      <div class="hero-content fade-up">
+        <div class="hero-eyebrow">For Nutrition Practitioners</div>
+        <h1>From Credential<br/>to <em>Career</em></h1>
+        <p class="hero-body">Free resources, guides, and tools to help nutrition practitioners turn their education into a sustainable practice.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})">Browse Resources</button>
+          <button class="btn-outline" onclick="document.getElementById('topics').scrollIntoView({behavior:'smooth'})">Explore Topics</button>
+        </div>
+      </div>
+      <div class="hero-visual fade-up" style="transition-delay:0.15s;">
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">37+</div>
+            <div class="hero-stat-label">Practitioner<br/>success stories</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Free tools &amp;<br/>templates</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">6</div>
+            <div class="hero-stat-label">Business topics covered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SECTION 2: FEATURED CONTENT ═══ -->
+  <section class="featured">
+    <div class="container">
+      <div class="featured-header fade-up">
+        <div>
+          <div class="section-label">Featured</div>
+          <h2>Start <em>Here</em></h2>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-card fade-up">
+          <div class="featured-card-img type-resource">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>
+          </div>
+          <div class="featured-card-body">
+            <span class="featured-card-badge badge-resource">Resource</span>
+            <h3>Practice Readiness Assessment</h3>
+            <p>A 10-question diagnostic that identifies your gaps between credential and career. Know exactly where you stand before you start.</p>
+            <a href="resources.html" class="btn-ghost">Download Free <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></a>
+          </div>
+        </div>
+        <div class="featured-card fade-up" style="transition-delay:0.1s;">
+          <div class="featured-card-img type-guide">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.331 0 4.47.89 6.063 2.346m0-12.304a8.968 8.968 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.346m0-12.304v12.304" /></svg>
+          </div>
+          <div class="featured-card-body">
+            <span class="featured-card-badge badge-guide">Guide</span>
+            <h3>Client Intake System Guide</h3>
+            <p>Intake form templates, discovery call scripts, and email sequences. The complete system for converting prospects into paying clients.</p>
+            <a href="resources.html" class="btn-ghost">Get the Guide <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SECTION 3: BROWSE BY TOPIC ═══ -->
+  <section class="topics" id="topics">
+    <div class="container">
+      <div class="topics-header fade-up">
+        <div class="section-label">Topics</div>
+        <h2>What Are You <em>Working On?</em></h2>
+        <p>Browse resources and guides by the business challenge you're facing right now.</p>
+      </div>
+      <div class="topics-grid">
+        <div class="topic-card fade-up" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Getting Started</h3>
+            <p>Legal setup, licensing, business formation, and your first steps as a practitioner-entrepreneur.</p>
+          </div>
+          <span class="topic-count">2 resources</span>
+        </div>
+        <div class="topic-card fade-up" style="transition-delay:0.06s;" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Pricing &amp; Revenue</h3>
+            <p>Package design, pricing strategy, revenue modeling, and building income you can sustain.</p>
+          </div>
+          <span class="topic-count">2 resources</span>
+        </div>
+        <div class="topic-card fade-up" style="transition-delay:0.12s;" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Client Acquisition</h3>
+            <p>Finding clients, building referral networks, outreach strategies, and marketing that works.</p>
+          </div>
+          <span class="topic-count">1 resource</span>
+        </div>
+        <div class="topic-card fade-up" style="transition-delay:0.18s;" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Systems &amp; Operations</h3>
+            <p>Intake workflows, scheduling, tech stack, and the infrastructure that makes your practice run.</p>
+          </div>
+          <span class="topic-count">2 resources</span>
+        </div>
+        <div class="topic-card fade-up" style="transition-delay:0.24s;" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Growth &amp; Scaling</h3>
+            <p>Taking your practice to the next level &mdash; hiring, expansion, partnerships, and advanced strategy.</p>
+          </div>
+          <span class="topic-count">Coming soon</span>
+        </div>
+        <div class="topic-card fade-up" style="transition-delay:0.3s;" tabindex="0">
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+          </div>
+          <div class="topic-info">
+            <h3>Mindset &amp; Leadership</h3>
+            <p>Operator thinking, professional confidence, career transitions, and the inner game of entrepreneurship.</p>
+          </div>
+          <span class="topic-count">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SECTION 4: FREE RESOURCES ═══ -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="resources-header fade-up">
+        <div class="resources-header-left">
+          <div class="section-label">Free Resources</div>
+          <h2>Tools You Can <em>Use Today</em></h2>
+        </div>
+        <a href="resources.html" class="btn-ghost">View All Resources <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></a>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card fade-up">
+          <div class="resource-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" /></svg>
+          </div>
+          <div class="resource-type">Assessment</div>
+          <h3>Practice Readiness Assessment</h3>
+          <p>10-question diagnostic to identify your gaps between credential and career.</p>
+          <button class="btn-outline">Download Free</button>
+        </div>
+        <div class="resource-card fade-up" style="transition-delay:0.08s;">
+          <div class="resource-icon" style="background:var(--bronze-tint);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color:var(--bronze);"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
+          </div>
+          <div class="resource-type">Checklist</div>
+          <h3>Business Starter Checklist</h3>
+          <p>42 action items from legal structure to first client. No fluff, just the list.</p>
+          <button class="btn-outline">Download Free</button>
+        </div>
+        <div class="resource-card fade-up" style="transition-delay:0.16s;">
+          <div class="resource-icon" style="background:#e6ede2;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color:#4a6e4a;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
+          </div>
+          <div class="resource-type">Template</div>
+          <h3>Revenue Planning Template</h3>
+          <p>Map out your pricing, service tiers, and monthly revenue targets with a simple framework.</p>
+          <button class="btn-outline">Download Free</button>
+        </div>
+        <div class="resource-card fade-up" style="transition-delay:0.24s;">
+          <div class="resource-icon" style="background:#e8e0f0;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color:#5a4a7e;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.331 0 4.47.89 6.063 2.346m0-12.304a8.968 8.968 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.346m0-12.304v12.304" /></svg>
+          </div>
+          <div class="resource-type">Guide</div>
+          <h3>Client Intake System Guide</h3>
+          <p>Intake form templates, discovery call scripts, and follow-up email sequences.</p>
+          <button class="btn-outline">Download Free</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ═══ SECTION 6: PROGRAMS ═══ -->
+  <section class="programs">
+    <div class="container">
+      <div class="programs-header fade-up">
+        <div class="section-label">Structured Programs</div>
+        <h2>Ready for <em>Guided Support?</em></h2>
+        <p>These resources are built to stand alone. But if you want structured mentorship, live coaching, and a community of practitioners &mdash; explore our programs.</p>
+      </div>
+      <div class="programs-grid">
+        <a href="https://holisticconsultinghq.com/programs.html#launch" class="program-card launch fade-up" style="text-decoration:none;">
+          <div class="program-stage">Stage 1 &mdash; Launch</div>
+          <h3>LAUNCH Your Career</h3>
+          <p>For new graduates ready to start their practice. Business foundations, first clients, intake systems, and structured mentorship to get you client-ready.</p>
+          <div class="program-price">$300 <span>+ $100/mo community</span></div>
+          <span class="btn-ghost">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></span>
+        </a>
+        <a href="https://holisticconsultinghq.com/programs.html#grow" class="program-card grow fade-up" style="transition-delay:0.1s;text-decoration:none;">
+          <div class="program-stage">Stage 2 &mdash; Grow</div>
+          <h3>GROW Your Impact</h3>
+          <p>For practitioners ready to deepen clinical skills and scale. 12 functional nutrition modules, BCHN exam prep, 3x/week live mentoring, 500 NANP contact hours.</p>
+          <div class="program-price">$3,750 <span>+ $100/mo community</span></div>
+          <span class="btn-ghost">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SECTION 7: TESTIMONIALS ═══ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-header fade-up">
+        <div class="section-label">From Practitioners</div>
+        <h2>Real Results, <em>Real People</em></h2>
+      </div>
+      <div class="testimonials-strip">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote">My business has quadrupled in revenue!</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-initials">M</div>
+            <div>
+              <div class="testimonial-name">Morgan</div>
+              <div class="testimonial-role">Nutrition Professional</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay:0.08s;">
+          <div class="testimonial-quote">Just a few weeks in, I sold a 3-month nutrition package!</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-initials">CH</div>
+            <div>
+              <div class="testimonial-name">Cara H.</div>
+              <div class="testimonial-role">Nutrition Coach</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay:0.16s;">
+          <div class="testimonial-quote">Built enough revenue to quit my day job. 10/10.</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-initials">CT</div>
+            <div>
+              <div class="testimonial-name">Corinne T.</div>
+              <div class="testimonial-role">Holistic Nutritionist</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay:0.24s;">
+          <div class="testimonial-quote">She signed up without even asking the price. Concierge nutritionist &mdash; that's what I'm doing now.</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-initials">HC</div>
+            <div>
+              <div class="testimonial-name">HC Practitioner</div>
+              <div class="testimonial-role">Concierge Nutritionist</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="noise"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">Holistic Consulting</div>
+          <div class="footer-tagline">Business resources for practitioners who build.</div>
+          <p>Free tools, guides, and resources to help nutrition practitioners build sustainable practices.</p>
+        </div>
+        <div class="footer-col">
+          <h4>This Site</h4>
+          <a href="#resources">Resources</a>
+          <a href="#topics">Topics</a>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <a href="https://holisticconsultinghq.com/programs.html#launch" target="_blank">LAUNCH</a>
+          <a href="https://holisticconsultinghq.com/programs.html#grow" target="_blank">GROW</a>
+          <a href="https://holisticconsultinghq.com/programs.html#master" target="_blank">MASTER</a>
+          <a href="https://holisticconsultinghq.com/programs.html#compare" target="_blank">Compare Programs</a>
+        </div>
+        <div class="footer-col">
+          <h4>HC Network</h4>
+          <a href="https://holisticconsultinghq.com" target="_blank">Main Site</a>
+          <a href="https://herbs.holisticconsultinghq.com" target="_blank">Herbalism Programs</a>
+          <a href="https://materiamedica.holisticconsultinghq.com" target="_blank">Materia Medica</a>
+          <a href="https://journal.holisticconsultinghq.com" target="_blank">Journal</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Holistic Consulting. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.getElementById('headerNav');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      headerNav.classList.toggle('open');
+    });
+    headerNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        headerNav.classList.remove('open');
+      });
+    });
+
+    // Fade-up observer
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+  </script>
+
+</body>
+</html>

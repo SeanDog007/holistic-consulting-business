@@ -1,0 +1,97 @@
+{
+  "site": "business.holisticconsultinghq.com",
+  "site_type": "Practitioner Resource Hub",
+  "site_purpose": "Free business resources, guides, and tools for nutrition practitioners. Anchors the 'business side of practice' content for the LAUNCH and GROW programs. Not a sales page — a content hub that stands alone and also funnels to structured programs when practitioners are ready.",
+  "hero_tagline": "From Credential to Career",
+  "hero_subhead": "Free resources, guides, and tools to help nutrition practitioners turn their education into a sustainable practice.",
+  "brand_voice": {
+    "tone": "Direct, operator-to-operator. Sean speaks as someone who's built and run real businesses — gyms, swim schools, a BJJ academy, a clinical nutrition practice — not as a business guru or course seller. The tone is military discipline meets wellness entrepreneurship: structured, specific, no-fluff, and grounded in lived experience. Think mentor-as-operator, not coach-as-celebrity.",
+    "site_tone_note": "This site is a resource hub, not a coaching pitch. Copy should be helpful and generous — giving away real value, not teasing content behind a paywall. Programs are mentioned as natural next steps, not hard sells.",
+    "personality_traits": [
+      "Results-oriented — every resource leads to a concrete next step, not motivational platitudes",
+      "Systems-thinking — builds frameworks and repeatable processes, not one-off advice",
+      "Anti-fluff — cuts through vague coaching language with specific, actionable guidance",
+      "Operator mindset — treats building a practice like running a business, because it is one",
+      "Specific over vague — names the exact problem, the exact system, the exact outcome",
+      "Generous with knowledge — freely shares tools, frameworks, and resources that practitioners can use immediately",
+      "Mentor-as-peer — walks alongside practitioners, not above them; earned authority through doing",
+      "Unconventional path — Naval Academy, submarines, multiple business ventures before clinical nutrition; proves there's no single 'right path'"
+    ],
+    "language_patterns": [
+      "Frames business building as a learnable skill, not a personality trait ('business sense isn't innate — it's a system you install')",
+      "Confronts the credentials-vs-career gap directly ('Your MS didn't teach you how to find your first paying client')",
+      "Names specific business systems rather than abstract concepts ('client intake workflow,' 'pricing architecture,' 'revenue model')",
+      "Uses military/operational metaphors sparingly ('mission planning,' 'systems check') to frame business strategy",
+      "Bridges clinical credibility with business savvy ('You already know how to help people. Now learn how to build the practice that lets you.')",
+      "Presents programs as a natural next step, not a sales pitch ('These resources stand alone. But if you want structured mentorship, explore our programs.')",
+      "Draws from personal experience: built a gym in DC, launched a swim school, founded a BJJ academy — each one a lesson in entrepreneurship"
+    ],
+    "words_to_use": [
+      "sustainable practice",
+      "business systems",
+      "credential to career",
+      "client acquisition",
+      "practitioner",
+      "operator",
+      "build",
+      "tools",
+      "resources",
+      "guides",
+      "practice infrastructure",
+      "pricing strategy",
+      "intake systems",
+      "discovery call",
+      "clinical practice",
+      "professional confidence",
+      "impactful career",
+      "real-world experience",
+      "mission-driven"
+    ],
+    "words_to_avoid": [
+      "hustle",
+      "grind",
+      "passive income",
+      "six-figure",
+      "boss babe",
+      "manifest",
+      "abundance mindset",
+      "funnel hacking",
+      "crush it",
+      "scale to seven figures",
+      "laptop lifestyle",
+      "freedom-based business",
+      "guru",
+      "masterclass (as marketing buzzword)",
+      "unlock your potential",
+      "limitless",
+      "exclusive access",
+      "limited time offer"
+    ]
+  },
+  "key_frameworks": [
+    "The Credential Gap: clinical programs train excellent practitioners but don't teach business — no pricing, no marketing, no client acquisition, no systems. This site bridges that gap with free resources.",
+    "From Credential to Career: the tagline and core thesis — turning education into a sustainable practice is a distinct skill set that can be learned.",
+    "Operator Mindset: treat your practice like a business from day one. Revenue systems, client pipelines, professional infrastructure — not 'follow your passion and the money will come.'",
+    "Systems Before Scale: build repeatable processes first (intake, pricing, scheduling, follow-up), then grow. Most practitioners try to scale chaos.",
+    "The Full Practitioner: clinical skill is only half the equation. Business acumen, professional confidence, and sustainable operations complete the picture."
+  ],
+  "target_audience": {
+    "primary": "Nutrition practitioners (CNS, RDN, NTP) looking for free, practical business resources to build or grow their private practice",
+    "secondary": "Practitioners in LAUNCH or GROW programs who use this hub as a companion resource library",
+    "tertiary": "Health and wellness professionals outside nutrition who recognize the credential-to-career gap in their own field",
+    "psychographic": "Clinically confident but business-uncertain. They know their craft but feel lost when it comes to pricing, marketing, finding clients, and building a sustainable revenue model. Looking for practical tools they can use now — not another sales funnel."
+  },
+  "ecosystem_role": {
+    "relationship_to_hq": "This site is the business-content arm of holisticconsultinghq.com. Resources here support the LAUNCH and GROW program curriculum. 1:1 coaching lives under MASTER on HQ, not here.",
+    "content_types": ["Downloadable tools/templates", "Topic-organized guides", "Business frameworks"],
+    "program_mentions": "Programs (LAUNCH, GROW) are referenced as natural next steps in a Programs CTA section — not hard sells. Links go to holisticconsultinghq.com.",
+    "cross_links": ["holisticconsultinghq.com (HQ — programs, main site)", "herbs.holisticconsultinghq.com (Herbalism)", "materiamedica.holisticconsultinghq.com (Materia Medica)", "journal.holisticconsultinghq.com (Journal)"]
+  },
+  "key_differentiators": [
+    "Sean's background: Naval Academy graduate, submarine officer (8 years), gym owner in DC, swim school founder, Brazilian Jiu-Jitsu academy founder, clinical nutritionist, MS in Clinical Nutrition, MS in Herbal Product Manufacturing, adjunct faculty at Maryland University of Integrative Health",
+    "Not a course seller — Sean has built and operated 5+ real businesses across different industries before entering wellness entrepreneurship",
+    "Free-first approach — this site gives away real tools and resources, not gated content teasers",
+    "Connected to HQ's full ecosystem — practitioners can access career programs (LAUNCH/GROW/MASTER), herbalism education, and a professional community through Holistic Consulting",
+    "University-level teaching credibility — Sean teaches business development at MUIH, grounding his guidance in academic rigor, not just personal anecdote"
+  ]
+}

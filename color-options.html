@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Sub-Brand — Color Direction (Expanded)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      text-align: center;
+      padding: 60px 24px 20px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; color: #fff;
+      letter-spacing: -0.02em; line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 0.95rem; color: #9a9a9a;
+      max-width: 640px; margin: 0 auto; line-height: 1.7;
+    }
+    .page-header .note {
+      display: inline-block; margin-top: 20px;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #7a7a7a;
+      border: 1px solid #333; padding: 6px 16px; border-radius: 100px;
+    }
+
+    /* ── Category dividers ── */
+    .category {
+      max-width: 1400px; margin: 40px auto 0; padding: 0 20px;
+    }
+    .category-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; color: #fff;
+      letter-spacing: -0.01em; margin-bottom: 4px;
+    }
+    .category-desc {
+      font-size: 0.8rem; color: #666; margin-bottom: 20px;
+    }
+    .category-line {
+      width: 100%; height: 1px; background: #2a2a2a; margin-bottom: 20px;
+    }
+
+    /* ── Option grid ── */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px 20px;
+    }
+    @media (max-width: 1100px) {
+      .options-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* ── Each option ── */
+    .option {
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .option:hover { border-color: #444; }
+
+    /* ── Option label ── */
+    .option-label {
+      text-align: center;
+      padding: 20px 20px 16px;
+    }
+    .option-label .letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .option-label h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600; color: #fff;
+      letter-spacing: -0.01em; margin-bottom: 3px;
+    }
+    .option-label .feel {
+      font-size: 0.75rem; color: #888; font-style: italic;
+    }
+    .option-label .badge {
+      display: inline-block; margin-top: 8px;
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .badge-new {
+      background: rgba(200,170,80,0.15); color: #d4b85a; border: 1px solid rgba(200,170,80,0.2);
+    }
+    .badge-prev {
+      background: rgba(100,100,100,0.15); color: #888; border: 1px solid rgba(100,100,100,0.2);
+    }
+
+    /* ── Swatch row ── */
+    .swatches {
+      display: flex; gap: 6px; padding: 0 16px 14px;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .swatch { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .swatch-color {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .swatch-label {
+      font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: #555;
+    }
+    .swatch-hex { font-size: 0.5rem; color: #444; }
+
+    /* ── Mockup panels ── */
+    .mockup {
+      margin: 0 12px 12px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ── Header mockup ── */
+    .mock-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px;
+    }
+    .mh-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; font-weight: 600;
+      letter-spacing: -0.01em; line-height: 1.2;
+    }
+    .mh-sub {
+      font-size: 0.45rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; margin-top: 1px;
+    }
+    .mh-nav {
+      display: flex; gap: 12px; align-items: center;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .mh-btn {
+      padding: 5px 12px; border-radius: 3px;
+      font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #fff; border: none;
+    }
+
+    /* ── Hero mockup ── */
+    .mock-hero {
+      padding: 24px 18px 28px;
+      position: relative; overflow: hidden;
+    }
+    .mhero-eyebrow {
+      font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .mhero-line {
+      display: inline-block; width: 24px; height: 2px;
+      margin-right: 6px; vertical-align: middle;
+    }
+    .mhero-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 600;
+      letter-spacing: -0.02em; line-height: 1.12;
+      margin-bottom: 10px;
+    }
+    .mhero-p {
+      font-size: 0.78rem; line-height: 1.7;
+      max-width: 340px; margin-bottom: 16px;
+    }
+    .mhero-btns { display: flex; gap: 8px; }
+    .btn-fill {
+      padding: 8px 16px; border-radius: 3px;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.04em; color: #fff; border: none;
+    }
+    .btn-stroke {
+      padding: 8px 16px; border-radius: 3px;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.04em; background: transparent;
+    }
+
+    /* ── Card mockup ── */
+    .mock-cards {
+      padding: 16px 18px 18px;
+    }
+    .mc-label {
+      font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .mc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600;
+      letter-spacing: -0.01em; margin-bottom: 12px;
+    }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .mini-card {
+      padding: 12px 10px; border-radius: 5px;
+      border-top: 3px solid;
+    }
+    .mc-tier {
+      font-size: 0.5rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .mc-ct {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem; font-weight: 600; margin-bottom: 2px;
+    }
+    .mc-cd { font-size: 0.58rem; line-height: 1.5; }
+
+    /* ── Dark section mockup ── */
+    .mock-dark {
+      padding: 24px 18px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .md-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: #fff; letter-spacing: -0.01em; margin-bottom: 6px;
+    }
+    .md-body {
+      font-size: 0.72rem; line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      max-width: 280px; margin: 0 auto 14px;
+    }
+    .md-btn {
+      display: inline-block;
+      padding: 8px 20px; border-radius: 3px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.04em; color: #fff; border: none;
+    }
+
+    /* ── Noise overlay ── */
+    .noise {
+      position: absolute; inset: 0; opacity: 0.04; pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center; padding: 40px 24px 80px;
+    }
+    .page-footer p {
+      font-size: 0.78rem; color: #555;
+      max-width: 520px; margin: 0 auto; line-height: 1.7;
+    }
+    .page-footer .footnote {
+      margin-top: 12px; font-size: 0.7rem; color: #444; font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Business Coaching — Color Options</h1>
+    <p>Expanded palette exploration for <strong style="color:#fff;">business.holisticconsultinghq.com</strong>. Same fonts (Cormorant + DM Sans), same layout grammar — different palette. Blue and gold directions plus originals for reference.</p>
+    <span class="note">Browse and pick your favorite</span>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- BLUE + GOLD OPTIONS (NEW)                    -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="category">
+    <div class="category-title">Blue + Gold Options</div>
+    <div class="category-desc">New directions exploring blue primary tones with gold/warm accent</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="options-grid">
+
+    <!-- ═══ D: Steel Blue + Gold ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#4A6A8A;">Option D</div>
+        <h2>Steel Blue + Gold</h2>
+        <div class="feel">Confident, trustworthy, classic business</div>
+        <div class="badge badge-new">New</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#4A6A8A;"></div><div class="swatch-label">Steel</div><div class="swatch-hex">#4A6A8A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#5E84A4;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#5E84A4</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#C9963B;"></div><div class="swatch-label">Gold</div><div class="swatch-hex">#C9963B</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D4A84B;"></div><div class="swatch-label">Gold Lt</div><div class="swatch-hex">#D4A84B</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F0EEE9;"></div><div class="swatch-label">Linen</div><div class="swatch-hex">#F0EEE9</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2D30;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#2A2D30</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#283040;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#283040</div></div>
+      </div>
+      <div class="mockup" style="background:#F0EEE9; border: 1px solid #D5D2CC;">
+        <div class="mock-header" style="border-bottom: 1px solid #D5D2CC;">
+          <div><div class="mh-logo" style="color:#2A2D30;">Holistic Consulting</div><div class="mh-sub" style="color:#4A6A8A;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#6B6E72;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#4A6A8A;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-30px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(74,106,138,0.08) 0%,transparent 70%);"></div>
+          <div class="mhero-eyebrow" style="color:#C9963B;"><span class="mhero-line" style="background:#C9963B;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#2A2D30;">Your Credential Is<br/><em style="color:#4A6A8A;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#6B6E72;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#C9963B;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #4A6A8A; color:#4A6A8A;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-cards" style="background:#E6E4DF;">
+          <div class="mc-label" style="color:#C9963B;">Programs</div>
+          <div class="mc-title" style="color:#2A2D30;">Launch. Grow. Master.</div>
+          <div class="card-grid">
+            <div class="mini-card" style="background:#F0EEE9; border:1px solid #D5D2CC; border-top:3px solid #4A6A8A;"><div class="mc-tier" style="color:#4A6A8A;">Launch</div><div class="mc-ct" style="color:#2A2D30;">Start Strong</div><div class="mc-cd" style="color:#6B6E72;">For new practitioners.</div></div>
+            <div class="mini-card" style="background:#F0EEE9; border:1px solid #D5D2CC; border-top:3px solid #C9963B;"><div class="mc-tier" style="color:#C9963B;">Grow</div><div class="mc-ct" style="color:#2A2D30;">Scale Up</div><div class="mc-cd" style="color:#6B6E72;">Expand your reach.</div></div>
+            <div class="mini-card" style="background:#F0EEE9; border:1px solid #D5D2CC; border-top:3px solid #4A6A8A;"><div class="mc-tier" style="color:#4A6A8A;">Master</div><div class="mc-ct" style="color:#2A2D30;">Lead</div><div class="mc-cd" style="color:#6B6E72;">Refine your legacy.</div></div>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#283040; position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,59,0.15) 0%,transparent 70%);"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#C9963B;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ E: Deep Navy + Warm Gold ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#2C4A6E;">Option E</div>
+        <h2>Deep Navy + Warm Gold</h2>
+        <div class="feel">Executive, premium, authoritative</div>
+        <div class="badge badge-new">New</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#2C4A6E;"></div><div class="swatch-label">Navy</div><div class="swatch-hex">#2C4A6E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#3E6490;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#3E6490</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B89A4A;"></div><div class="swatch-label">Gold</div><div class="swatch-hex">#B89A4A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#CCAE5E;"></div><div class="swatch-label">Gold Lt</div><div class="swatch-hex">#CCAE5E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F2F0EB;"></div><div class="swatch-label">Cream</div><div class="swatch-hex">#F2F0EB</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1E2A38;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#1E2A38</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1A2536;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#1A2536</div></div>
+      </div>
+      <div class="mockup" style="background:#F2F0EB; border: 1px solid #D8D5CE;">
+        <div class="mock-header" style="border-bottom: 1px solid #D8D5CE;">
+          <div><div class="mh-logo" style="color:#1E2A38;">Holistic Consulting</div><div class="mh-sub" style="color:#2C4A6E;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#6B6E72;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#2C4A6E;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-30px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(44,74,110,0.08) 0%,transparent 70%);"></div>
+          <div class="mhero-eyebrow" style="color:#B89A4A;"><span class="mhero-line" style="background:#B89A4A;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#1E2A38;">Your Credential Is<br/><em style="color:#2C4A6E;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#5A5E62;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#B89A4A;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #2C4A6E; color:#2C4A6E;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-cards" style="background:#E8E6E0;">
+          <div class="mc-label" style="color:#B89A4A;">Programs</div>
+          <div class="mc-title" style="color:#1E2A38;">Launch. Grow. Master.</div>
+          <div class="card-grid">
+            <div class="mini-card" style="background:#F2F0EB; border:1px solid #D8D5CE; border-top:3px solid #2C4A6E;"><div class="mc-tier" style="color:#2C4A6E;">Launch</div><div class="mc-ct" style="color:#1E2A38;">Start Strong</div><div class="mc-cd" style="color:#5A5E62;">For new practitioners.</div></div>
+            <div class="mini-card" style="background:#F2F0EB; border:1px solid #D8D5CE; border-top:3px solid #B89A4A;"><div class="mc-tier" style="color:#B89A4A;">Grow</div><div class="mc-ct" style="color:#1E2A38;">Scale Up</div><div class="mc-cd" style="color:#5A5E62;">Expand your reach.</div></div>
+            <div class="mini-card" style="background:#F2F0EB; border:1px solid #D8D5CE; border-top:3px solid #2C4A6E;"><div class="mc-tier" style="color:#2C4A6E;">Master</div><div class="mc-ct" style="color:#1E2A38;">Lead</div><div class="mc-cd" style="color:#5A5E62;">Refine your legacy.</div></div>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#1A2536; position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(184,154,74,0.15) 0%,transparent 70%);"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#B89A4A;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ F: Muted Denim + Antique Gold ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#506882;">Option F</div>
+        <h2>Muted Denim + Antique Gold</h2>
+        <div class="feel">Approachable, warm, grounded</div>
+        <div class="badge badge-new">New</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#506882;"></div><div class="swatch-label">Denim</div><div class="swatch-hex">#506882</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#68829C;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#68829C</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#A88C4A;"></div><div class="swatch-label">Antq Gold</div><div class="swatch-hex">#A88C4A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#BFA25E;"></div><div class="swatch-label">Gold Lt</div><div class="swatch-hex">#BFA25E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F1EFE8;"></div><div class="swatch-label">Parchment</div><div class="swatch-hex">#F1EFE8</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2D3038;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#2D3038</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#252A34;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#252A34</div></div>
+      </div>
+      <div class="mockup" style="background:#F1EFE8; border: 1px solid #D6D3CA;">
+        <div class="mock-header" style="border-bottom: 1px solid #D6D3CA;">
+          <div><div class="mh-logo" style="color:#2D3038;">Holistic Consulting</div><div class="mh-sub" style="color:#506882;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#6B6E72;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#506882;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-30px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(80,104,130,0.08) 0%,transparent 70%);"></div>
+          <div class="mhero-eyebrow" style="color:#A88C4A;"><span class="mhero-line" style="background:#A88C4A;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#2D3038;">Your Credential Is<br/><em style="color:#506882;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#62666C;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#A88C4A;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #506882; color:#506882;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-cards" style="background:#E7E5DD;">
+          <div class="mc-label" style="color:#A88C4A;">Programs</div>
+          <div class="mc-title" style="color:#2D3038;">Launch. Grow. Master.</div>
+          <div class="card-grid">
+            <div class="mini-card" style="background:#F1EFE8; border:1px solid #D6D3CA; border-top:3px solid #506882;"><div class="mc-tier" style="color:#506882;">Launch</div><div class="mc-ct" style="color:#2D3038;">Start Strong</div><div class="mc-cd" style="color:#62666C;">For new practitioners.</div></div>
+            <div class="mini-card" style="background:#F1EFE8; border:1px solid #D6D3CA; border-top:3px solid #A88C4A;"><div class="mc-tier" style="color:#A88C4A;">Grow</div><div class="mc-ct" style="color:#2D3038;">Scale Up</div><div class="mc-cd" style="color:#62666C;">Expand your reach.</div></div>
+            <div class="mini-card" style="background:#F1EFE8; border:1px solid #D6D3CA; border-top:3px solid #506882;"><div class="mc-tier" style="color:#506882;">Master</div><div class="mc-ct" style="color:#2D3038;">Lead</div><div class="mc-cd" style="color:#62666C;">Refine your legacy.</div></div>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#252A34; position:relative;">
+          <div class="noise"></div>
+          <div style="position:absolute;top:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(168,140,74,0.15) 0%,transparent 70%);"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#A88C4A;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- ORIGINAL OPTIONS (FOR REFERENCE)             -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="category" style="margin-top:50px;">
+    <div class="category-title">Original Options</div>
+    <div class="category-desc">Previous directions for comparison — teal, navy-slate, and charcoal</div>
+    <div class="category-line"></div>
+  </div>
+
+  <div class="options-grid">
+
+    <!-- ═══ A: Deep Teal + Bronze (previous pick) ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#2A6B5E;">Option A</div>
+        <h2>Deep Teal + Bronze</h2>
+        <div class="feel">Strategic, grounded, organic</div>
+        <div class="badge badge-prev">Previous Pick</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#2A6B5E;"></div><div class="swatch-label">Teal</div><div class="swatch-hex">#2A6B5E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#3D8B7A;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#3D8B7A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#9A7B4F;"></div><div class="swatch-label">Bronze</div><div class="swatch-hex">#9A7B4F</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B08E62;"></div><div class="swatch-label">Brz Lt</div><div class="swatch-hex">#B08E62</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F2F0EC;"></div><div class="swatch-label">Stone</div><div class="swatch-hex">#F2F0EC</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2D2B;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#2A2D2B</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#252B29;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#252B29</div></div>
+      </div>
+      <div class="mockup" style="background:#F2F0EC; border: 1px solid #D8D4CE;">
+        <div class="mock-header" style="border-bottom: 1px solid #D8D4CE;">
+          <div><div class="mh-logo" style="color:#2A2D2B;">Holistic Consulting</div><div class="mh-sub" style="color:#2A6B5E;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#5E6360;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#2A6B5E;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div class="mhero-eyebrow" style="color:#9A7B4F;"><span class="mhero-line" style="background:#9A7B4F;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#2A2D2B;">Your Credential Is<br/><em style="color:#2A6B5E;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#5E6360;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#9A7B4F;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #2A6B5E; color:#2A6B5E;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#252B29; position:relative;">
+          <div class="noise"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#9A7B4F;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ B: Slate Navy + Amber ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#3D4F5F;">Option B</div>
+        <h2>Slate Navy + Amber</h2>
+        <div class="feel">Executive, corporate, polished</div>
+        <div class="badge badge-prev">Original</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#3D4F5F;"></div><div class="swatch-label">Navy</div><div class="swatch-hex">#3D4F5F</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#526A7A;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#526A7A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#C4943A;"></div><div class="swatch-label">Amber</div><div class="swatch-hex">#C4943A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D4A84E;"></div><div class="swatch-label">Amb Lt</div><div class="swatch-hex">#D4A84E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F0EEE9;"></div><div class="swatch-label">Linen</div><div class="swatch-hex">#F0EEE9</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2C2E;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#2A2C2E</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2E33;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#2A2E33</div></div>
+      </div>
+      <div class="mockup" style="background:#F0EEE9; border: 1px solid #D5D2CC;">
+        <div class="mock-header" style="border-bottom: 1px solid #D5D2CC;">
+          <div><div class="mh-logo" style="color:#2A2C2E;">Holistic Consulting</div><div class="mh-sub" style="color:#3D4F5F;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#636870;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#3D4F5F;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div class="mhero-eyebrow" style="color:#C4943A;"><span class="mhero-line" style="background:#C4943A;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#2A2C2E;">Your Credential Is<br/><em style="color:#3D4F5F;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#636870;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#C4943A;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #3D4F5F; color:#3D4F5F;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#2A2E33; position:relative;">
+          <div class="noise"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#C4943A;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ C: Warm Charcoal + Copper ═══ -->
+    <div class="option">
+      <div class="option-label">
+        <div class="letter" style="color:#3A3D3A;">Option C</div>
+        <h2>Warm Charcoal + Copper</h2>
+        <div class="feel">Editorial, minimal, premium</div>
+        <div class="badge badge-prev">Original</div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#3A3D3A;"></div><div class="swatch-label">Char</div><div class="swatch-hex">#3A3D3A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#525552;"></div><div class="swatch-label">Light</div><div class="swatch-hex">#525552</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B07242;"></div><div class="swatch-label">Copper</div><div class="swatch-hex">#B07242</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#C4855A;"></div><div class="swatch-label">Cop Lt</div><div class="swatch-hex">#C4855A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F3F1EC;"></div><div class="swatch-label">Linen</div><div class="swatch-hex">#F3F1EC</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2D2A;"></div><div class="swatch-label">Text</div><div class="swatch-hex">#2A2D2A</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2D2A;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#2A2D2A</div></div>
+      </div>
+      <div class="mockup" style="background:#F3F1EC; border: 1px solid #D6D3CC;">
+        <div class="mock-header" style="border-bottom: 1px solid #D6D3CC;">
+          <div><div class="mh-logo" style="color:#2A2D2A;">Holistic Consulting</div><div class="mh-sub" style="color:#3A3D3A;">Building Impactful Careers</div></div>
+          <div class="mh-nav" style="color:#6B6860;"><span>Programs</span><span>About</span><button class="mh-btn" style="background:#3A3D3A;">Book a Call</button></div>
+        </div>
+        <div class="mock-hero" style="position:relative;">
+          <div class="noise"></div>
+          <div class="mhero-eyebrow" style="color:#B07242;"><span class="mhero-line" style="background:#B07242;"></span>Business Coaching</div>
+          <div class="mhero-h" style="color:#2A2D2A;">Your Credential Is<br/><em style="color:#3A3D3A;">Just the Beginning</em></div>
+          <p class="mhero-p" style="color:#6B6860;">Structured coaching for nutrition practitioners ready to turn their clinical expertise into a thriving practice.</p>
+          <div class="mhero-btns">
+            <button class="btn-fill" style="background:#B07242;">Explore Programs</button>
+            <button class="btn-stroke" style="border:1.5px solid #3A3D3A; color:#3A3D3A;">Learn More</button>
+          </div>
+        </div>
+        <div class="mock-dark" style="background:#2A2D2A; position:relative;">
+          <div class="noise"></div>
+          <div class="md-title">Ready to Build Your Practice?</div>
+          <p class="md-body">Join nutrition practitioners who've turned their credentials into careers.</p>
+          <button class="md-btn" style="background:#B07242;">Get Started Today</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="page-footer">
+    <p><strong style="color:#fff;">Blue + Gold directions:</strong> Option D (Steel Blue) is the most balanced — professional but not cold. Option E (Deep Navy) feels the most premium/executive. Option F (Muted Denim) is the softest and most approachable of the three.</p>
+    <p class="footnote">All six options use the same fonts (Cormorant + DM Sans) and layout grammar as HQ and Herbs. The originals (A–C) are included below for comparison.</p>
+  </div>
+
+</body>
+</html>

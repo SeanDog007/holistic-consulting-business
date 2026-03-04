@@ -1,0 +1,82 @@
+{
+  "site": "business.holisticconsultinghq.com",
+  "site_type": "Practitioner Resource Hub",
+  "tagline": "From Credential to Career",
+  "brand_colors": {
+    "navy": {
+      "default": "#2C4A6E",
+      "light": "#3E6490",
+      "tint": "#E0E6EE",
+      "deep": "#1A2536",
+      "usage": "Primary brand color. Hero headline emphasis, topic badges, nav CTA button (background), card accents, outline buttons (border + text), program stage tags"
+    },
+    "bronze": {
+      "default": "#B89A4A",
+      "light": "#CCAE5E",
+      "tint": "#F5EFE0",
+      "usage": "Accent color. Primary CTA buttons (background), section labels (eyebrow text), decorative lines, hero eyebrow, featured card type badges, hover accents"
+    },
+    "charcoal": {
+      "hex": "#1E2A38",
+      "usage": "Primary text color. Headings, body text, card titles"
+    },
+    "slate": {
+      "hex": "#5A5E62",
+      "usage": "Secondary text color. Descriptions, nav links, card body copy, hero subhead"
+    },
+    "stone": {
+      "hex": "#F2F0EB",
+      "usage": "Page background. Light, warm neutral base"
+    },
+    "offwhite": {
+      "hex": "#E8E6E0",
+      "usage": "Alternating section backgrounds, card icon areas, subtle contrast layers"
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "usage": "Card surfaces, elevated content areas, button text on dark backgrounds"
+    },
+    "border": {
+      "hex": "#D8D5CE",
+      "usage": "Card borders, dividers, subtle separators"
+    },
+    "dark": {
+      "hex": "#1A2536",
+      "usage": "Footer background, dark section backgrounds, deep navy for contrast areas"
+    }
+  },
+  "typography": {
+    "display_font": {
+      "family": "Cormorant Garamond",
+      "fallback": "Georgia, serif",
+      "usage": "All headings (h1–h3), section titles, program names, testimonial quotes",
+      "weights": [400, 500, 600, 700],
+      "styles": ["normal", "italic"],
+      "tracking": "-0.01em (tight on large headings)"
+    },
+    "body_font": {
+      "family": "DM Sans",
+      "fallback": "-apple-system, BlinkMacSystemFont, sans-serif",
+      "usage": "Body copy, nav links, buttons, labels, section eyebrows, card descriptions, footer text",
+      "weights": [300, 400, 500, 600, 700],
+      "styles": ["normal", "italic"],
+      "line_height": "1.75 (generous for readability)"
+    },
+    "section_label": {
+      "font": "DM Sans",
+      "size": "0.65rem",
+      "weight": 600,
+      "tracking": "0.22em",
+      "transform": "uppercase",
+      "color": "#B89A4A (bronze)"
+    }
+  },
+  "patterns": {
+    "header": "Fixed frosted-glass header (backdrop-filter: blur(16px), semi-transparent stone background)",
+    "scroll_animations": "Fade-up on scroll via IntersectionObserver (opacity 0→1, translateY 24px→0, 0.7s ease-out)",
+    "card_hover": "translateY(-4px) with layered shadow deepening",
+    "button_hover": "translateY(-2px) with spring easing (cubic-bezier(0.34, 1.56, 0.64, 1))",
+    "noise_texture": "SVG fractalNoise overlay at 0.018 opacity (body) / 0.03 opacity (sections)",
+    "shadows": "Layered, low-opacity: cards use 0 1px 3px rgba(0,0,0,0.04) base + 0 6px 24px rgba(0,0,0,0.06) elevated"
+  }
+}
