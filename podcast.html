@@ -494,10 +494,16 @@
     <div class="container">
       <h2 class="fade-up">Never Miss an <em>Episode</em></h2>
       <p class="fade-up">Get notified when new episodes drop — plus occasional business insights straight to your inbox.</p>
-      <form class="subscribe-form fade-up" onsubmit="event.preventDefault();">
-        <input type="email" placeholder="Your email address" required />
+      <form class="subscribe-form fade-up" id="podcast-signup">
+        <input type="text" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true">
+        <input type="email" name="email" placeholder="Your email address" required />
         <button type="submit" class="btn-primary">Subscribe</button>
       </form>
+      <div class="form-error" id="podcast-error" style="display:none; color:#c0392b; font-size:0.82rem; text-align:center; margin-top:0.75rem;">Something went wrong — please try again.</div>
+      <div id="podcast-success" style="display:none; text-align:center; margin-top:1rem;">
+        <p style="font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:var(--charcoal); margin-bottom:0.25rem;">You're in!</p>
+        <p style="font-size:0.88rem;">We'll notify you when new episodes drop.</p>
+      </div>
     </div>
   </section>
 
@@ -568,6 +574,40 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+    // ── Podcast Subscribe Form ──
+    const podcastForm = document.getElementById('podcast-signup');
+    if (podcastForm) {
+      podcastForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = podcastForm.querySelector('button[type="submit"]');
+        const errorEl = document.getElementById('podcast-error');
+        const successEl = document.getElementById('podcast-success');
+        errorEl.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+        try {
+          const res = await fetch('https://holistic-consulting-crm.netlify.app/.netlify/functions/submit-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: podcastForm.email.value.trim(),
+              category: 'career',
+              sourceSite: 'business',
+              sourceForm: 'podcast_signup',
+              interest: 'subscribed'
+            })
+          });
+          if (!res.ok) throw new Error('Server error');
+          podcastForm.style.display = 'none';
+          successEl.style.display = 'block';
+        } catch {
+          errorEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    }
   </script>
 
 </body>

@@ -606,18 +606,24 @@
         <h2>Get Resources Straight<br/>to Your <em>Inbox</em></h2>
         <p>Subscribe for new tools, templates, and business insights for nutrition practitioners — no spam, no fluff, just useful stuff.</p>
       </div>
-      <form class="email-form fade-up" onsubmit="event.preventDefault();">
+      <form class="email-form fade-up" id="resources-signup">
+        <input type="text" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true">
         <div class="form-group">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="Your first name" required />
+          <label for="resources-firstName">First Name</label>
+          <input type="text" name="firstName" id="resources-firstName" placeholder="Your first name" required />
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="resources-email">Email</label>
+          <input type="email" name="email" id="resources-email" placeholder="you@example.com" required />
         </div>
         <button type="submit" class="btn-primary">Subscribe</button>
         <p class="form-note">Unsubscribe anytime. We respect your inbox.</p>
+        <div class="form-error" id="resources-error" style="display:none; color:#c0392b; font-size:0.82rem; text-align:center; margin-top:0.75rem;">Something went wrong — please try again.</div>
       </form>
+      <div id="resources-success" style="display:none; text-align:center; padding:2rem;">
+        <p style="font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--charcoal); margin-bottom:0.5rem;">You're in!</p>
+        <p style="font-size:0.9rem;">Check your inbox for business resources and updates.</p>
+      </div>
     </div>
   </section>
 
@@ -699,6 +705,41 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+    // ── Email Capture Form ──
+    const resourcesForm = document.getElementById('resources-signup');
+    if (resourcesForm) {
+      resourcesForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = resourcesForm.querySelector('button[type="submit"]');
+        const errorEl = document.getElementById('resources-error');
+        const successEl = document.getElementById('resources-success');
+        errorEl.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+        try {
+          const res = await fetch('https://holistic-consulting-crm.netlify.app/.netlify/functions/submit-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              firstName: resourcesForm.firstName.value.trim(),
+              email: resourcesForm.email.value.trim(),
+              category: 'career',
+              sourceSite: 'business',
+              sourceForm: 'resources_signup',
+              interest: 'subscribed'
+            })
+          });
+          if (!res.ok) throw new Error('Server error');
+          resourcesForm.style.display = 'none';
+          successEl.style.display = 'block';
+        } catch {
+          errorEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    }
   </script>
 
 </body>
